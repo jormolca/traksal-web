@@ -99,7 +99,7 @@ export default function HomePage() {
               <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '16px', minHeight: '280px' }}>
                 {/* Sidebar mock */}
                 <div style={{ background: 'rgba(162,217,243,0.04)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {['Fichaje','Estancos','Ruteros','Planificación','Productos','Equipo'].map((item, i) => (
+                  {['Fichaje','Clientes','Ruteros','Planificación','Productos','Equipo'].map((item, i) => (
                     <div key={item} style={{ padding: '8px 12px', borderRadius: '8px', background: i === 2 ? 'rgba(162,217,243,0.15)' : 'transparent', borderLeft: i === 2 ? '3px solid var(--secondary)' : '3px solid transparent', fontSize: '0.82rem', color: i === 2 ? 'white' : 'rgba(255,255,255,0.5)', fontWeight: i === 2 ? 600 : 400 }}>
                       {item}
                     </div>
@@ -200,10 +200,10 @@ export default function HomePage() {
                 <div style={{ background: 'var(--primary-mid)', borderRadius: '20px', border: '1px solid rgba(162,217,243,0.2)', padding: '28px', boxShadow: '0 30px 80px rgba(0,0,0,0.4)' }} className="animate-float">
                   <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>Planificación de Visitas — Hoy</div>
                   {[
-                    { name: 'Estanco Madrid 001', time: '09:30', status: 'Realizada', color: '#7DFFB0' },
-                    { name: 'Estanco Madrid 002', time: '11:00', status: 'En curso', color: 'var(--secondary)' },
-                    { name: 'Estanco Madrid 003', time: '12:30', status: 'Pendiente', color: 'var(--accent)' },
-                    { name: 'Estanco Madrid 004', time: '16:00', status: 'Pendiente', color: 'var(--accent)' },
+                    { name: 'Cliente 1 Madrid', time: '09:30', status: 'Realizada', color: '#7DFFB0' },
+                    { name: 'Cliente 2 Barcelona', time: '11:00', status: 'En curso', color: 'var(--secondary)' },
+                    { name: 'Cliente 3 Sevilla', time: '12:30', status: 'Pendiente', color: 'var(--accent)' },
+                    { name: 'Cliente 4 Valencia', time: '16:00', status: 'Pendiente', color: 'var(--accent)' },
                   ].map(v => (
                     <div key={v.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
                       <div>

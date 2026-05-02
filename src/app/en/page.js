@@ -113,9 +113,10 @@ export default function EnglishHomePage() {
               <div style={{ background: 'var(--primary-mid)', borderRadius: '20px', border: '1px solid rgba(162,217,243,0.2)', padding: '28px', boxShadow: '0 30px 80px rgba(0,0,0,0.4)' }} className="animate-float">
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>Today&apos;s Visit Plan</div>
                 {[
-                  { name: 'Client Madrid 001', time: '09:30', status: 'Done', color: '#7DFFB0' },
-                  { name: 'Client Madrid 002', time: '11:00', status: 'In progress', color: 'var(--secondary)' },
-                  { name: 'Client Madrid 003', time: '12:30', status: 'Pending', color: 'var(--accent)' },
+                  { name: 'Client 1 Madrid', time: '09:30', status: 'Done', color: '#7DFFB0' },
+                  { name: 'Client 2 Barcelona', time: '11:00', status: 'In progress', color: 'var(--secondary)' },
+                  { name: 'Client 3 Sevilla', time: '12:30', status: 'Pending', color: 'var(--accent)' },
+                  { name: 'Client 4 Valencia', time: '16:00', status: 'Pending', color: 'var(--accent)' },
                 ].map(v => (
                   <div key={v.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
                     <div>
