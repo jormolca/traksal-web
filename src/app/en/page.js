@@ -54,7 +54,7 @@ export default function EnglishHomePage() {
                 Traksal connects your office with your field sales force. From clock-in to order, everything in one single platform.
               </p>
               <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Start free today →</a>
+                <a href="#contact" className="btn btn-primary btn-lg">Start free today →</a>
                 <a href="#features" className="btn btn-secondary btn-lg">See features</a>
               </div>
               <p style={{ marginTop: '20px', fontSize: '0.85rem', color: 'var(--text-muted)' }}>
@@ -82,7 +82,7 @@ export default function EnglishHomePage() {
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '48px' }}>
-              <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">Start free — no card needed →</a>
+              <a href="#contact" className="btn btn-primary btn-lg">Start free — no card needed →</a>
             </div>
           </div>
         </section>
@@ -150,7 +150,7 @@ export default function EnglishHomePage() {
                     </div>
                   ))}
                 </div>
-                <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>Start free →</a>
+                <a href="#contact" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>Start free →</a>
               </div>
               <div className="card" style={{ textAlign: 'left', border: '2px solid var(--accent)', background: 'linear-gradient(135deg, var(--primary-mid) 0%, rgba(194,158,94,0.06) 100%)' }}>
                 <span className="tag tag-accent" style={{ marginBottom: '20px' }}>⭐ Coming soon</span>

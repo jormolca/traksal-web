@@ -66,7 +66,7 @@ export default function HomePage() {
               </p>
 
               <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+                <a href="#contacto" className="btn btn-primary btn-lg">
                   Empieza gratis hoy →
                 </a>
                 <a href="#caracteristicas" className="btn btn-secondary btn-lg">
@@ -163,7 +163,7 @@ export default function HomePage() {
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '48px' }}>
-              <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+              <a href="#contacto" className="btn btn-primary btn-lg">
                 Empieza gratis — sin tarjeta →
               </a>
             </div>
@@ -265,7 +265,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
+                <a href="#contacto" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>
                   Empezar gratis →
                 </a>
               </div>
