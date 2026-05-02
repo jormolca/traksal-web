@@ -33,8 +33,7 @@ export default function ContactForm({ lang = 'es' }) {
     setStatus('sending');
 
     // Usamos Formspree como puente gratuito para enviar el mail a hola@traksal.com
-    // NOTA: El usuario debe confirmar el email en Formspree la primera vez.
-    const response = await fetch('https://formspree.io/f/xvgopkno', { // ID temporal, el usuario debería poner el suyo
+    const response = await fetch('https://formspree.io/f/mojrjdaw', { 
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, message, _subject: 'Nuevo contacto desde la Web Traksal' })
