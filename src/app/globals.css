@@ -190,22 +190,23 @@ img { max-width: 100%; height: auto; }
 
 /* ── Section Label ── */
 .section-label {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 12px;
   font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 .section-label::before,
 .section-label::after {
   content: '';
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 32px;
+  height: 1.5px;
   background: var(--accent);
 }
 

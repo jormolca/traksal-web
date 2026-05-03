@@ -148,7 +148,7 @@ export default function HomePage() {
         {/* ── FICHAJE FREE ── */}
         <section id="caracteristicas" className="section">
           <div className="container">
-            <div style={{ maxWidth: '640px', marginBottom: '64px' }}>
+            <div style={{ maxWidth: '640px', marginBottom: '64px', margin: '0 auto', textAlign: 'center' }}>
               <span className="section-label">Módulo gratuito</span>
               <h2 style={{ marginBottom: '20px' }}>Fichaje digital <span className="text-accent">100% gratuito</span>, para siempre</h2>
               <p>Sin límites de usuarios, sin caducidad. Tu equipo ficha desde el móvil en segundos y tú tienes el control total desde la oficina.</p>
@@ -173,9 +173,9 @@ export default function HomePage() {
         {/* ── CRM ── */}
         <section className="section" style={{ background: 'linear-gradient(180deg, var(--primary) 0%, rgba(22,37,57,0.5) 50%, var(--primary) 100%)' }}>
           <div className="container">
+          <span className="section-label">Próximamente</span>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', alignItems: 'center' }}>
             <div>
-              <span className="section-label" style={{ color: 'var(--secondary)' }}>Próximamente</span>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
                 <h2 style={{ margin: 0 }}>CRM para <span className="text-secondary">fuerza de ventas</span></h2>
                 <span className="tag tag-blue">En desarrollo</span>
@@ -222,7 +222,7 @@ export default function HomePage() {
         {/* ── CATALOG ── */}
         <section className="section">
           <div className="container" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-            <span className="section-label" style={{ justifyContent: 'center' }}>Innovación</span>
+            <span className="section-label">Innovación</span>
             <h2 style={{ marginBottom: '20px' }}>Catálogo interactivo + <span className="gradient-text">toma de pedidos</span></h2>
             <p style={{ fontSize: '1.05rem', marginBottom: '48px' }}>
               Tu comercial muestra el catálogo de productos en el tablet o móvil y toma el pedido al instante, integrado directamente con el CRM. Sin papeles, sin llamadas, sin errores.
@@ -247,7 +247,7 @@ export default function HomePage() {
         {/* ── PRICING ── */}
         <section id="precios" className="section" style={{ background: 'rgba(162,217,243,0.03)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
           <div className="container" style={{ textAlign: 'center' }}>
-            <span className="section-label" style={{ justifyContent: 'center' }}>Precios</span>
+            <span className="section-label">Precios</span>
             <h2 style={{ marginBottom: '16px' }}>Empieza gratis. <span className="text-accent">Crece cuando quieras.</span></h2>
             <p style={{ maxWidth: '500px', margin: '0 auto 56px', fontSize: '1.05rem' }}>Sin compromisos. El fichaje siempre gratuito. El CRM, cuando estés listo.</p>
 
@@ -294,7 +294,7 @@ export default function HomePage() {
         {/* ── CONTACT CTA ── */}
         <section id="contacto" className="section">
           <div className="container" style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto' }}>
-            <span className="section-label" style={{ justifyContent: 'center' }}>Contacto</span>
+            <span className="section-label">Contacto</span>
             <h2 style={{ marginBottom: '20px' }}>¿Hablamos sobre <span className="gradient-text">tu equipo comercial</span>?</h2>
             <p style={{ marginBottom: '40px', fontSize: '1.05rem' }}>Cuéntanos cómo funciona tu red de ventas y te mostramos cómo Traksal puede ayudarte.</p>
             <ContactForm lang="es" />
