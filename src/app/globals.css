@@ -68,7 +68,10 @@ img { max-width: 100%; height: auto; }
   margin: 0 auto;
   padding: 0 24px;
 }
-.section { padding: 96px 0; }
+.section { 
+  padding: 96px 0; 
+  scroll-margin-top: 120px; 
+}
 .section-sm { padding: 64px 0; }
 .text-center { text-align: center; }
 .text-accent { color: var(--accent); }
