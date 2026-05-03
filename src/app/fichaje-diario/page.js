@@ -87,10 +87,7 @@ export default function FichajeDiarioPage() {
 
           {/* Text Side */}
           <div>
-            <Link href="/" style={{ color: 'var(--secondary)', display: 'inline-flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', marginBottom: '32px' }}>
-              ← Volver al inicio
-            </Link>
-            <span className="section-label" style={{ justifyContent: 'flex-start' }}>Funcionalidad</span>
+            <span className="section-label">Funcionalidad</span>
             <h1 style={{ marginBottom: '24px', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
               Fichaje diario <br />
               <span className="gradient-text">en un solo clic.</span>
@@ -106,7 +103,7 @@ export default function FichajeDiarioPage() {
                 </div>
                 <div>
                   <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Con o sin geolocalización</h3>
-                  <p style={{ fontSize: '0.95rem' }}>Tú decides si quieres registrar la ubicación exacta del fichaje o mantenerlo privado. Configurable por empleado.</p>
+                  <p style={{ fontSize: '0.95rem' }}>Tú decides si quieres registrar la ubicación exacta del fichaje o mantenerlo privado. Configurable por el administrador.</p>
                 </div>
               </div>
               
