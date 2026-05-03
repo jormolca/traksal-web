@@ -65,7 +65,7 @@ export default function HomePage() {
                 Traksal conecta tu oficina con tu fuerza comercial en la calle. Desde el fichaje hasta el pedido, todo en una sola plataforma.
               </p>
 
-              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div className="hero-buttons" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a href="#contacto" className="btn btn-primary btn-lg">
                   Empieza gratis hoy →
                 </a>

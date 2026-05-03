@@ -53,7 +53,7 @@ export default function EnglishHomePage() {
               <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--text-secondary)', maxWidth: '580px', margin: '0 auto 40px' }}>
                 Traksal connects your office with your field sales force. From clock-in to order, everything in one single platform.
               </p>
-              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div className="hero-buttons" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <a href="#contact" className="btn btn-primary btn-lg">Start free today →</a>
                 <a href="#features" className="btn btn-secondary btn-lg">See features</a>
               </div>

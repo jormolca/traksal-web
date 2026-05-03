@@ -250,16 +250,35 @@ img { max-width: 100%; height: auto; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+  }
   .section { padding: 64px 0; }
-  .section-sm { padding: 48px 0; }
-  .container { padding: 0 16px; }
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.7rem; }
-  .btn-lg { padding: 16px 28px; font-size: 1rem; }
-  .hide-mobile { display: none; }
+  .section-sm { padding: 40px 0; }
+  .container { padding: 0 20px; }
+  
+  h1 { font-size: clamp(2rem, 8vw, 2.8rem); line-height: 1.1; }
+  h2 { font-size: 1.8rem; }
+  
+  /* Buttons stack on mobile */
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .btn-lg { 
+    width: 100%; 
+    padding: 16px 24px; 
+    font-size: 1rem; 
+    justify-content: center;
+  }
+
+  .hide-mobile { display: none !important; }
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 1.8rem; }
+  h1 { font-size: 1.85rem; }
   .card { padding: 24px; }
+  .section-label { font-size: 0.7rem; }
 }
