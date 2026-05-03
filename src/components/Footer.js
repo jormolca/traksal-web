@@ -23,7 +23,7 @@ export default function Footer({ lang = 'es' }) {
   return (
     <footer style={{ background: 'rgba(11,19,31,1)', borderTop: '1px solid var(--border)', paddingTop: '64px', paddingBottom: '32px' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: '48px', marginBottom: '48px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px', marginBottom: '48px' }}>
           {/* Brand */}
           <div>
             <Image src="/tkl-logo.png" alt="Traksal" width={150} height={42} style={{ objectFit: 'contain', mixBlendMode: 'lighten', marginBottom: '16px' }} />

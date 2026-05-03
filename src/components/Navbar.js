@@ -61,13 +61,32 @@ export default function Navbar({ lang = 'es' }) {
 
         {/* Mobile Menu Overlay */}
         <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`}>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', textAlign: 'center', padding: '40px' }}>
-            <a href={`${base}/#caracteristicas`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t.features}</a>
-            <a href={`${base}/#precios`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t.pricing}</a>
-            <a href={`${base}/#contacto`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t.contact}</a>
-            <div style={{ height: '1px', background: 'var(--border)', margin: '10px 0' }} />
-            <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%' }}>{t.access}</a>
-            <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600 }}>Switch to {otherLang.label}</Link>
+          <div style={{ 
+            width: '100%', 
+            maxWidth: '400px',
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '20px', 
+            textAlign: 'center', 
+            padding: '40px 24px' 
+          }}>
+            <div style={{ marginBottom: '20px' }}>
+              <Image src="/tkl-logo.png" alt="Traksal" width={120} height={34} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
+            </div>
+            
+            <a href={`${base}/#caracteristicas`} onClick={closeMenu} style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white' }}>{t.features}</a>
+            <a href={`${base}/#precios`} onClick={closeMenu} style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white' }}>{t.pricing}</a>
+            <a href={`${base}/#contacto`} onClick={closeMenu} style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white' }}>{t.contact}</a>
+            
+            <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '10px 0' }} />
+            
+            <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center' }}>
+              {t.access}
+            </a>
+            
+            <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '0.9rem', marginTop: '10px' }}>
+              Switch to {otherLang.label}
+            </Link>
           </div>
         </div>
       </div>
@@ -99,10 +118,12 @@ export default function Navbar({ lang = 'es' }) {
           display: none;
           background: none;
           border: none;
-          padding: 10px;
+          padding: 8px;
           cursor: pointer;
           position: relative;
-          z-index: 1001;
+          z-index: 1100;
+          width: 44px;
+          height: 44px;
         }
 
         .mobile-overlay {
@@ -111,24 +132,26 @@ export default function Navbar({ lang = 'es' }) {
           left: 0;
           right: 0;
           bottom: 0;
-          background: var(--primary);
+          background: #0F1A2A; /* Solid corporate color */
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
           opacity: 0;
           visibility: hidden;
-          transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 1000;
+          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+          transform: translateY(-20px);
+          z-index: 1050;
         }
 
         .mobile-overlay.open {
           opacity: 1;
           visibility: visible;
+          transform: translateY(0);
         }
 
         @media (max-width: 768px) {
-          .mobile-menu-btn { display: block; }
+          .mobile-menu-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; }
           .hide-mobile { display: none !important; }
         }
       `}</style>

@@ -80,12 +80,12 @@ export default function HomePage() {
             </div>
 
             {/* Mock UI card */}
-            <div style={{
+            <div className="animate-pulse-glow hide-mobile" style={{
               marginTop: '64px', background: 'var(--primary-mid)', borderRadius: '20px',
               border: '1px solid var(--border-light)', padding: '24px',
               boxShadow: '0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(162,217,243,0.08)',
               maxWidth: '900px', margin: '64px auto 0'
-            }} className="animate-pulse-glow">
+            }}>
               {/* Fake browser bar */}
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid var(--border)' }}>
                 <div style={{ display: 'flex', gap: '6px' }}>
@@ -133,7 +133,7 @@ export default function HomePage() {
         {/* ── STATS ── */}
         <section className="section-sm" style={{ background: 'rgba(162,217,243,0.04)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '32px' }}>
               {stats.map(s => (
                 <div key={s.label} style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 900, fontFamily: 'var(--font-head)', background: 'linear-gradient(135deg, var(--secondary), var(--accent))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '8px' }}>{s.value}</div>
@@ -173,49 +173,49 @@ export default function HomePage() {
         {/* ── CRM ── */}
         <section className="section" style={{ background: 'linear-gradient(180deg, var(--primary) 0%, rgba(22,37,57,0.5) 50%, var(--primary) 100%)' }}>
           <div className="container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
-              <div>
-                <span className="section-label" style={{ color: 'var(--secondary)' }}>Próximamente</span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                  <h2 style={{ margin: 0 }}>CRM para <span className="text-secondary">fuerza de ventas</span></h2>
-                  <span className="tag tag-blue">En desarrollo</span>
-                </div>
-                <p style={{ marginBottom: '32px', fontSize: '1.05rem' }}>
-                  Conecta a tu equipo comercial con sus clientes. Planifica rutas, registra visitas y mide el rendimiento de cada comercial desde un solo panel.
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                  {features_crm.map(f => (
-                    <div key={f.title} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                      <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
-                      <div>
-                        <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem' }}>{f.title}</div>
-                        <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', alignItems: 'center' }}>
+            <div>
+              <span className="section-label" style={{ color: 'var(--secondary)' }}>Próximamente</span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
+                <h2 style={{ margin: 0 }}>CRM para <span className="text-secondary">fuerza de ventas</span></h2>
+                <span className="tag tag-blue">En desarrollo</span>
               </div>
-              {/* Visual */}
-              <div style={{ position: 'relative' }}>
-                <div style={{ background: 'var(--primary-mid)', borderRadius: '20px', border: '1px solid rgba(162,217,243,0.2)', padding: '28px', boxShadow: '0 30px 80px rgba(0,0,0,0.4)' }} className="animate-float">
-                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>Planificación de Visitas — Hoy</div>
-                  {[
-                    { name: 'Cliente 1 Madrid', time: '09:30', status: 'Realizada', color: '#7DFFB0' },
-                    { name: 'Cliente 2 Barcelona', time: '11:00', status: 'En curso', color: 'var(--secondary)' },
-                    { name: 'Cliente 3 Sevilla', time: '12:30', status: 'Pendiente', color: 'var(--accent)' },
-                    { name: 'Cliente 4 Valencia', time: '16:00', status: 'Pendiente', color: 'var(--accent)' },
-                  ].map(v => (
-                    <div key={v.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
-                      <div>
-                        <div style={{ fontWeight: 600, fontSize: '0.88rem', marginBottom: '2px' }}>{v.name}</div>
-                        <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{v.time}</div>
-                      </div>
-                      <span style={{ fontSize: '0.75rem', padding: '4px 10px', borderRadius: '99px', background: `${v.color}20`, color: v.color, fontWeight: 700 }}>{v.status}</span>
+              <p style={{ marginBottom: '32px', fontSize: '1.05rem' }}>
+                Conecta a tu equipo comercial con sus clientes. Planifica rutas, registra visitas y mide el rendimiento de cada comercial desde un solo panel.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                {features_crm.map(f => (
+                  <div key={f.title} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                    <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
+                    <div>
+                      <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem' }}>{f.title}</div>
+                      <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
             </div>
+            {/* Visual */}
+            <div style={{ position: 'relative' }}>
+              <div style={{ background: 'var(--primary-mid)', borderRadius: '20px', border: '1px solid rgba(162,217,243,0.2)', padding: '28px', boxShadow: '0 30px 80px rgba(0,0,0,0.4)' }} className="animate-float">
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '16px' }}>Planificación de Visitas — Hoy</div>
+                {[
+                  { name: 'Cliente 1 Madrid', time: '09:30', status: 'Realizada', color: '#7DFFB0' },
+                  { name: 'Cliente 2 Barcelona', time: '11:00', status: 'En curso', color: 'var(--secondary)' },
+                  { name: 'Cliente 3 Sevilla', time: '12:30', status: 'Pendiente', color: 'var(--accent)' },
+                  { name: 'Cliente 4 Valencia', time: '16:00', status: 'Pendiente', color: 'var(--accent)' },
+                ].map(v => (
+                  <div key={v.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
+                    <div>
+                      <div style={{ fontWeight: 600, fontSize: '0.88rem', marginBottom: '2px' }}>{v.name}</div>
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>{v.time}</div>
+                    </div>
+                    <span style={{ fontSize: '0.75rem', padding: '4px 10px', borderRadius: '99px', background: `${v.color}20`, color: v.color, fontWeight: 700 }}>{v.status}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           </div>
         </section>
 
