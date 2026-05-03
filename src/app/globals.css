@@ -195,7 +195,8 @@ img { max-width: 100%; height: auto; }
   color: var(--accent);
   margin-bottom: 16px;
 }
-.section-label::before {
+.section-label::before,
+.section-label::after {
   content: '';
   display: block;
   width: 24px;
