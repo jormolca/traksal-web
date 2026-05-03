@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Traksal | Software CRM para Redes Comerciales – Fichaje Gratuito',
@@ -9,7 +10,7 @@ export const metadata = {
 };
 
 const features_fichaje = [
-  { icon: '🕐', title: 'Fichaje diario', desc: 'Los empleados fichan desde el móvil con un clic. Con o sin geolocalización.' },
+  { icon: '🕐', title: 'Fichaje diario', desc: 'Los empleados fichan desde el móvil con un clic. Con o sin geolocalización.', link: '/fichaje-diario' },
   { icon: '📊', title: 'Informes de horas', desc: 'Cada empleado ve su propio resumen de horas trabajadas en tiempo real.' },
   { icon: '🏖️', title: 'Solicitud de vacaciones', desc: 'Flujo completo de petición y aprobación de vacaciones integrado.' },
   { icon: '📄', title: 'Informe legal mensual', desc: 'Genera el informe mensual con firma del empleado. Listo para inspección.' },
@@ -155,11 +156,20 @@ export default function HomePage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
               {features_fichaje.map(f => (
-                <div key={f.title} className="card">
-                  <div style={{ fontSize: '2rem', marginBottom: '16px' }}>{f.icon}</div>
-                  <h3 style={{ marginBottom: '10px', fontSize: '1.05rem' }}>{f.title}</h3>
-                  <p style={{ fontSize: '0.9rem', margin: 0 }}>{f.desc}</p>
-                </div>
+                f.link ? (
+                  <Link key={f.title} href={f.link} className="card" style={{ cursor: 'pointer', display: 'block' }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '16px' }}>{f.icon}</div>
+                    <h3 style={{ marginBottom: '10px', fontSize: '1.05rem' }}>{f.title}</h3>
+                    <p style={{ fontSize: '0.9rem', margin: 0 }}>{f.desc}</p>
+                    <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'var(--secondary)', fontWeight: 600 }}>Saber más →</div>
+                  </Link>
+                ) : (
+                  <div key={f.title} className="card">
+                    <div style={{ fontSize: '2rem', marginBottom: '16px' }}>{f.icon}</div>
+                    <h3 style={{ marginBottom: '10px', fontSize: '1.05rem' }}>{f.title}</h3>
+                    <p style={{ fontSize: '0.9rem', margin: 0 }}>{f.desc}</p>
+                  </div>
+                )
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '48px' }}>
