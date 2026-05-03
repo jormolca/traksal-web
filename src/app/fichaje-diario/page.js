@@ -1,13 +1,51 @@
-'use client';
-
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+
+export const metadata = {
+  title: 'Fichaje Diario Digital en un Clic | Control Horario Traksal',
+  description: 'Descubre cómo el fichaje diario de Traksal simplifica el control horario de tu equipo comercial. Un solo clic desde el móvil, con geolocalización opcional y cumplimiento legal total.',
+  keywords: ['fichaje diario', 'control horario', 'fichaje digital', 'geolocalización empleados', 'ley de control horario', 'traksal'],
+  alternates: {
+    canonical: 'https://www.traksal.com/fichaje-diario',
+  },
+  openGraph: {
+    title: 'Fichaje Diario Digital en un Clic | Traksal',
+    description: 'La forma más sencilla y rápida de cumplir con el control horario obligatorio.',
+    url: 'https://www.traksal.com/fichaje-diario',
+    type: 'website',
+  }
+};
 
 export default function FichajeDiarioPage() {
   return (
     <main style={{ background: 'var(--primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
+      
+      {/* Schema.org JSON-LD for Software Application Feature */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Traksal Fichaje Diario",
+            "operatingSystem": "iOS, Android, Web",
+            "applicationCategory": "BusinessApplication",
+            "featureList": [
+              "Fichaje en un clic",
+              "Geolocalización opcional",
+              "Informes legales mensuales",
+              "Sincronización en tiempo real"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "0.00",
+              "priceCurrency": "EUR"
+            }
+          }),
+        }}
+      />
       
       {/* Content */}
       <div className="container" style={{ flex: 1, display: 'flex', alignItems: 'center', padding: '120px 24px' }}>
