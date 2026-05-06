@@ -51,7 +51,7 @@ export default function FichajeDiarioPage() {
       
       {/* Content */}
       <div className="container" style={{ flex: 1, display: 'flex', alignItems: 'center', padding: '120px 24px' }}>
-        <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '60px', alignItems: 'center', width: '100%' }}>
+        <div className="responsive-grid">
           
           {/* Text Side */}
           <div style={{ order: 1 }}>
@@ -100,15 +100,6 @@ export default function FichajeDiarioPage() {
 
         </div>
       </div>
-
-      <style jsx>{`
-        @media (max-width: 768px) {
-          .responsive-grid {
-            gap: 40px !important;
-            padding-top: 40px;
-          }
-        }
-      `}</style>
 
       <Footer />
     </main>

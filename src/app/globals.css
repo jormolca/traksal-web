@@ -288,3 +288,18 @@ img { max-width: 100%; height: auto; }
   .card { padding: 24px; }
   .section-label { font-size: 0.7rem; }
 }
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    gap: 40px !important;
+    padding-top: 40px;
+  }
+}
