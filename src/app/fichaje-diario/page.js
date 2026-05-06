@@ -51,7 +51,7 @@ export default function FichajeDiarioPage() {
       
       {/* Content */}
       <section style={{
-        paddingTop: 'calc(var(--nav-height) + 40px)',
+        paddingTop: 'calc(var(--nav-height) + 10px)',
         paddingBottom: '80px',
         minHeight: '80vh',
         display: 'flex',
