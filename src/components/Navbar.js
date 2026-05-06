@@ -59,7 +59,7 @@ export default function Navbar({ lang = 'es' }) {
             padding: '8px',
             cursor: 'pointer',
             position: 'relative',
-            zIndex: 1100,
+            zIndex: 3000, /* Higher than overlay */
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -79,51 +79,51 @@ export default function Navbar({ lang = 'es' }) {
             </svg>
           )}
         </button>
+      </div>
 
-        {/* Mobile Menu Overlay */}
-        <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`} style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: '#0B121E', /* Darker and solid */
-          zIndex: 2000, /* Above everything */
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          opacity: menuOpen ? 1 : 0,
-          visibility: menuOpen ? 'visible' : 'hidden',
-          transition: 'all 0.3s ease-in-out'
+      {/* Mobile Menu Overlay - OUTSIDE of container for total control */}
+      <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`} style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: '#0B121E', /* Solid dark blue */
+        zIndex: 2500, /* Between container and button */
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        opacity: menuOpen ? 1 : 0,
+        visibility: menuOpen ? 'visible' : 'hidden',
+        transition: 'opacity 0.3s ease-in-out'
+      }}>
+        <div style={{ 
+          width: '100%', 
+          maxWidth: '320px',
+          display: 'flex', 
+          flexDirection: 'column', 
+          gap: '32px', 
+          textAlign: 'center', 
+          padding: '20px' 
         }}>
-          <div style={{ 
-            width: '100%', 
-            maxWidth: '320px',
-            display: 'flex', 
-            flexDirection: 'column', 
-            gap: '32px', 
-            textAlign: 'center', 
-            padding: '40px 24px' 
-          }}>
-            <div style={{ marginBottom: '10px' }}>
-              <Image src="/tkl-logo.png" alt="Traksal" width={150} height={45} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
-            </div>
-            
-            <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem' }}>{t.features}</a>
-            <a href={`${base}/#precios`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem' }}>{t.pricing}</a>
-            <a href={`${base}/#contacto`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem' }}>{t.contact}</a>
-            
-            <div style={{ height: '1px', background: 'rgba(162,217,243,0.1)', margin: '10px 0' }} />
-            
-            <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '16px' }}>
-              {t.access}
-            </a>
-            
-            <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '1rem' }}>
-              {otherLang.label}
-            </Link>
+          <div style={{ marginBottom: '20px' }}>
+            <Image src="/tkl-logo.png" alt="Traksal" width={150} height={45} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
           </div>
+          
+          <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.features}</a>
+          <a href={`${base}/#precios`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.pricing}</a>
+          <a href={`${base}/#contacto`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.contact}</a>
+          
+          <div style={{ height: '1px', background: 'rgba(162,217,243,0.1)', margin: '10px 0' }} />
+          
+          <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '16px' }}>
+            {t.access}
+          </a>
+          
+          <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '1rem', textDecoration: 'none' }}>
+            {otherLang.label}
+          </Link>
         </div>
       </div>
     </nav>
