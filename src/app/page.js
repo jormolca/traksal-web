@@ -82,10 +82,6 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Animated Demo */}
-            <div style={{ marginTop: '64px' }} className="hide-mobile">
-              <FichajeDemo />
-            </div>
 
           </div>
         </section>
