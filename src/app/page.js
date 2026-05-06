@@ -43,8 +43,11 @@ export default function HomePage() {
 
         {/* ── HERO ── */}
         <section style={{
-          minHeight: '100vh', display: 'flex', alignItems: 'center',
+          minHeight: '70vh', 
+          display: 'flex', 
+          alignItems: 'center',
           paddingTop: 'calc(var(--nav-height) + 40px)',
+          paddingBottom: '80px',
           background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(162,217,243,0.12) 0%, transparent 70%), radial-gradient(ellipse 60% 40% at 80% 80%, rgba(194,158,94,0.08) 0%, transparent 60%), var(--primary)',
           position: 'relative', overflow: 'hidden'
         }}>
