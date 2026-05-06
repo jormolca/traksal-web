@@ -51,15 +51,10 @@ export default function FichajeDiarioPage() {
       
       {/* Content */}
       <div className="container" style={{ flex: 1, display: 'flex', alignItems: 'center', padding: '120px 24px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '80px', alignItems: 'center', width: '100%' }}>
+        <div className="responsive-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '60px', alignItems: 'center', width: '100%' }}>
           
-          {/* Visual Side */}
-          <div className="hide-mobile">
-            <FichajeDemo />
-          </div>
-
           {/* Text Side */}
-          <div>
+          <div style={{ order: 1 }}>
             <span className="section-label">Funcionalidad</span>
             <h1 style={{ marginBottom: '24px', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
               Fichaje diario <br />
@@ -98,8 +93,22 @@ export default function FichajeDiarioPage() {
             </div>
           </div>
 
+          {/* Visual Side */}
+          <div style={{ order: 2 }}>
+            <FichajeDemo />
+          </div>
+
         </div>
       </div>
+
+      <style jsx>{`
+        @media (max-width: 768px) {
+          .responsive-grid {
+            gap: 40px !important;
+            padding-top: 40px;
+          }
+        }
+      `}</style>
 
       <Footer />
     </main>
