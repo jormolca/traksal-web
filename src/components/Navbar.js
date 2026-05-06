@@ -87,42 +87,41 @@ export default function Navbar({ lang = 'es' }) {
           left: 0,
           right: 0,
           bottom: 0,
-          background: '#0F1A2A',
-          zIndex: 1050,
+          background: '#0B121E', /* Darker and solid */
+          zIndex: 2000, /* Above everything */
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           opacity: menuOpen ? 1 : 0,
           visibility: menuOpen ? 'visible' : 'hidden',
-          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-          transform: menuOpen ? 'translateY(0)' : 'translateY(-20px)'
+          transition: 'all 0.3s ease-in-out'
         }}>
           <div style={{ 
             width: '100%', 
             maxWidth: '320px',
             display: 'flex', 
             flexDirection: 'column', 
-            gap: '28px', 
+            gap: '32px', 
             textAlign: 'center', 
             padding: '40px 24px' 
           }}>
-            <div style={{ marginBottom: '20px' }}>
-              <Image src="/tkl-logo.png" alt="Traksal" width={140} height={40} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
+            <div style={{ marginBottom: '10px' }}>
+              <Image src="/tkl-logo.png" alt="Traksal" width={150} height={45} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
             </div>
             
-            <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link">{t.features}</a>
-            <a href={`${base}/#precios`} onClick={closeMenu} className="mobile-link">{t.pricing}</a>
-            <a href={`${base}/#contacto`} onClick={closeMenu} className="mobile-link">{t.contact}</a>
+            <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem' }}>{t.features}</a>
+            <a href={`${base}/#precios`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem' }}>{t.pricing}</a>
+            <a href={`${base}/#contacto`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem' }}>{t.contact}</a>
             
-            <div style={{ height: '1px', background: 'rgba(162,217,243,0.15)', margin: '10px 0' }} />
+            <div style={{ height: '1px', background: 'rgba(162,217,243,0.1)', margin: '10px 0' }} />
             
-            <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', fontSize: '1.1rem' }}>
+            <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '16px' }}>
               {t.access}
             </a>
             
-            <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '1rem', marginTop: '10px' }}>
-              Switch to {otherLang.label}
+            <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '1rem' }}>
+              {otherLang.label}
             </Link>
           </div>
         </div>
