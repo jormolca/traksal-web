@@ -123,9 +123,9 @@ export default function Navbar({ lang = 'es' }) {
               <Image src="/tkl-logo.png" alt="Traksal" width={140} height={40} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
             </div>
             
-            <a href={`${base}/#caracteristicas`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{t.features}</a>
-            <a href={`${base}/#precios`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{t.pricing}</a>
-            <a href={`${base}/#contacto`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{t.contact}</a>
+            <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link">{t.features}</a>
+            <a href={`${base}/#precios`} onClick={closeMenu} className="mobile-link">{t.pricing}</a>
+            <a href={`${base}/#contacto`} onClick={closeMenu} className="mobile-link">{t.contact}</a>
             
             <div style={{ height: '1px', background: 'rgba(162,217,243,0.15)', margin: '10px 0' }} />
             
@@ -139,71 +139,6 @@ export default function Navbar({ lang = 'es' }) {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .nav-link {
-          color: rgba(255,255,255,0.75);
-          font-size: 0.9rem;
-          font-weight: 500;
-          transition: color 0.2s;
-        }
-        .nav-link:hover { color: white; }
-        
-        .lang-selector {
-          font-size: 0.8rem;
-          font-weight: 700;
-          color: var(--text-muted);
-          padding: 6px 10px;
-          border-radius: 8px;
-          border: 1px solid var(--border);
-          transition: all 0.2s;
-        }
-        .lang-selector:hover {
-          color: var(--secondary);
-          border-color: var(--secondary);
-        }
-
-        .mobile-menu-btn {
-          display: none;
-          background: none;
-          border: none;
-          padding: 8px;
-          cursor: pointer;
-          position: relative;
-          z-index: 1100;
-          width: 44px;
-          height: 44px;
-        }
-
-        .mobile-overlay {
-          position: fixed;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: #0F1A2A; /* Solid corporate color */
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          opacity: 0;
-          visibility: hidden;
-          transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
-          transform: translateY(-20px);
-          z-index: 1050;
-        }
-
-        .mobile-overlay.open {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
-        }
-
-        @media (max-width: 768px) {
-          .mobile-menu-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; }
-          .hide-mobile { display: none !important; }
-        }
-      `}</style>
     </nav>
   );
 }

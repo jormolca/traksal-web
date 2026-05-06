@@ -165,27 +165,6 @@ export default function FichajeDemo() {
         </div>
       </div>
 
-      <style jsx>{`
-        .ripple {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 0;
-          height: 0;
-          background: rgba(255, 255, 255, 0.3);
-          border-radius: 50%;
-          animation: click-ripple 0.4s ease-out;
-        }
-        @keyframes click-ripple {
-          from { opacity: 1; width: 0; height: 0; }
-          to { opacity: 0; width: 80px; height: 80px; }
-        }
-        @keyframes fade-up {
-          from { opacity: 0; transform: translateY(15px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </div>
   );
 }

@@ -303,3 +303,63 @@ img { max-width: 100%; height: auto; }
     padding-top: 40px;
   }
 }
+
+/* ── Navbar & Menu ── */
+.nav-link {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: white; }
+
+.lang-selector {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.lang-selector:hover {
+  color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.mobile-link {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+
+/* ── Demo Animations ── */
+.ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  animation: click-ripple 0.4s ease-out;
+}
+
+@keyframes click-ripple {
+  from { opacity: 1; width: 0; height: 0; }
+  to { opacity: 0; width: 80px; height: 80px; }
+}
+
+@keyframes demo-fade-up {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.caption-bubble {
+  animation: demo-fade-up 0.5s ease;
+}
