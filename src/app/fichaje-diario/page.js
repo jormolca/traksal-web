@@ -50,56 +50,64 @@ export default function FichajeDiarioPage() {
       />
       
       {/* Content */}
-      <div className="container" style={{ flex: 1, display: 'flex', alignItems: 'center', padding: '120px 24px' }}>
-        <div className="responsive-grid">
-          
-          {/* Text Side */}
-          <div style={{ order: 1 }}>
-            <span className="section-label">Funcionalidad</span>
-            <h1 style={{ marginBottom: '24px', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-              Fichaje diario <br />
-              <span className="gradient-text">en un solo clic.</span>
-            </h1>
-            <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '40px', maxWidth: '500px' }}>
-              Hemos eliminado la complejidad. Tus empleados solo necesitan abrir la app y pulsar un botón. Sin formularios, sin esperas.
-            </p>
+      <section style={{
+        flex: 1, 
+        display: 'flex', 
+        alignItems: 'center', 
+        paddingTop: 'calc(var(--nav-height) + 40px)',
+        paddingBottom: '80px'
+      }}>
+        <div className="container">
+          <div className="responsive-grid">
             
-            <div style={{ display: 'grid', gap: '24px' }}>
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <div style={{ width: '40px', height: '40px', background: 'rgba(194, 158, 94, 0.1)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent)', flexShrink: 0 }}>
-                  ✓
-                </div>
-                <div>
-                  <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Con o sin geolocalización</h3>
-                  <p style={{ fontSize: '0.95rem' }}>Tú decides si quieres registrar la ubicación exacta del fichaje o mantenerlo privado. Configurable por el administrador.</p>
-                </div>
-              </div>
+            {/* Text Side */}
+            <div style={{ order: 1 }}>
+              <span className="section-label">Funcionalidad</span>
+              <h1 style={{ marginBottom: '24px', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
+                Fichaje diario <br />
+                <span className="gradient-text">en un solo clic.</span>
+              </h1>
+              <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '40px', maxWidth: '500px' }}>
+                Hemos eliminado la complejidad. Tus empleados solo necesitan abrir la app y pulsar un botón. Sin formularios, sin esperas.
+              </p>
               
-              <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                <div style={{ width: '40px', height: '40px', background: 'rgba(162, 217, 243, 0.1)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--secondary)', flexShrink: 0 }}>
-                  ✓
+              <div style={{ display: 'grid', gap: '24px' }}>
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '40px', height: '40px', background: 'rgba(194, 158, 94, 0.1)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent)', flexShrink: 0 }}>
+                    ✓
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Con o sin geolocalización</h3>
+                    <p style={{ fontSize: '0.95rem' }}>Tú decides si quieres registrar la ubicación exacta del fichaje o mantenerlo privado. Configurable por el administrador.</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Disponibilidad inmediata</h3>
-                  <p style={{ fontSize: '0.95rem' }}>El fichaje se sincroniza al instante con el panel de administración para que tengas el control en tiempo real.</p>
+                
+                <div style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div style={{ width: '40px', height: '40px', background: 'rgba(162, 217, 243, 0.1)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--secondary)', flexShrink: 0 }}>
+                    ✓
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Disponibilidad inmediata</h3>
+                    <p style={{ fontSize: '0.95rem' }}>El fichaje se sincroniza al instante con el panel de administración para que tengas el control en tiempo real.</p>
+                  </div>
                 </div>
+              </div>
+
+              <div style={{ marginTop: '56px' }}>
+                <Link href="/#contacto" className="btn btn-primary btn-lg">
+                  Probar gratis ahora
+                </Link>
               </div>
             </div>
 
-            <div style={{ marginTop: '56px' }}>
-              <Link href="/#contacto" className="btn btn-primary btn-lg">
-                Probar gratis ahora
-              </Link>
+            {/* Visual Side */}
+            <div style={{ order: 2 }}>
+              <FichajeDemo />
             </div>
-          </div>
 
-          {/* Visual Side */}
-          <div style={{ order: 2 }}>
-            <FichajeDemo />
           </div>
-
         </div>
-      </div>
+      </section>
 
       <Footer />
     </main>
