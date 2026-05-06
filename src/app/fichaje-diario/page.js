@@ -51,11 +51,11 @@ export default function FichajeDiarioPage() {
       
       {/* Content */}
       <section style={{
-        flex: 1, 
-        display: 'flex', 
-        alignItems: 'center', 
         paddingTop: 'calc(var(--nav-height) + 40px)',
-        paddingBottom: '80px'
+        paddingBottom: '80px',
+        minHeight: '80vh',
+        display: 'flex',
+        flexDirection: 'column'
       }}>
         <div className="container">
           <div className="responsive-grid">
