@@ -2,6 +2,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/ContactForm';
 import Link from 'next/link';
+import FichajeDemo from '@/components/FichajeDemo';
+
 
 export const metadata = {
   title: 'Traksal | Software CRM para Redes Comerciales – Fichaje Gratuito',
@@ -80,54 +82,11 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Mock UI card */}
-            <div className="animate-pulse-glow hide-mobile" style={{
-              marginTop: '64px', background: 'var(--primary-mid)', borderRadius: '20px',
-              border: '1px solid var(--border-light)', padding: '24px',
-              boxShadow: '0 40px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(162,217,243,0.08)',
-              maxWidth: '900px', margin: '64px auto 0'
-            }}>
-              {/* Fake browser bar */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px', paddingBottom: '16px', borderBottom: '1px solid var(--border)' }}>
-                <div style={{ display: 'flex', gap: '6px' }}>
-                  {['#E74C3C','#F39C12','#27AE60'].map(c => <div key={c} style={{ width: '12px', height: '12px', borderRadius: '50%', background: c }} />)}
-                </div>
-                <div style={{ flex: 1, background: 'var(--primary-light)', borderRadius: '6px', padding: '6px 14px', fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-                  app.traksal.com
-                </div>
-              </div>
-              {/* Fake dashboard */}
-              <div style={{ display: 'grid', gridTemplateColumns: '200px 1fr', gap: '16px', minHeight: '280px' }}>
-                {/* Sidebar mock */}
-                <div style={{ background: 'rgba(162,217,243,0.04)', borderRadius: '12px', padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {['Fichaje','Clientes','Ruteros','Planificación','Productos','Equipo'].map((item, i) => (
-                    <div key={item} style={{ padding: '8px 12px', borderRadius: '8px', background: i === 2 ? 'rgba(162,217,243,0.15)' : 'transparent', borderLeft: i === 2 ? '3px solid var(--secondary)' : '3px solid transparent', fontSize: '0.82rem', color: i === 2 ? 'white' : 'rgba(255,255,255,0.5)', fontWeight: i === 2 ? 600 : 400 }}>
-                      {item}
-                    </div>
-                  ))}
-                </div>
-                {/* Content mock */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  <div style={{ display: 'flex', gap: '12px' }}>
-                    {[['247', 'Clientes asignados','var(--secondary)'],['18', 'Visitas hoy','var(--accent)'],['94%', 'Cobertura','#7DFFB0']].map(([val, label, color]) => (
-                      <div key={label} style={{ flex: 1, background: 'var(--primary-light)', borderRadius: '12px', padding: '16px', textAlign: 'center' }}>
-                        <div style={{ fontSize: '1.8rem', fontWeight: 800, color, fontFamily: 'var(--font-head)' }}>{val}</div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px' }}>{label}</div>
-                      </div>
-                    ))}
-                  </div>
-                  <div style={{ flex: 1, background: 'var(--primary-light)', borderRadius: '12px', padding: '16px' }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Visitas recientes</div>
-                    {['Comercial A - Madrid Norte', 'Comercial B - Barcelona Centro', 'Comercial C - Valencia'].map((name, i) => (
-                      <div key={name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '8px 0', borderBottom: i < 2 ? '1px solid var(--border)' : 'none' }}>
-                        <span style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>{name}</span>
-                        <span style={{ fontSize: '0.72rem', padding: '2px 8px', borderRadius: '99px', background: 'rgba(39,174,96,0.15)', color: '#7DFFB0' }}>Realizada</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            {/* Animated Demo */}
+            <div style={{ marginTop: '64px' }} className="hide-mobile">
+              <FichajeDemo />
             </div>
+
           </div>
         </section>
 
