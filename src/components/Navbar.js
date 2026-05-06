@@ -53,38 +53,87 @@ export default function Navbar({ lang = 'es' }) {
           className="mobile-menu-btn"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle Menu"
+          style={{
+            background: 'none',
+            border: 'none',
+            padding: '10px',
+            cursor: 'pointer',
+            position: 'relative',
+            zIndex: 1100,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
         >
-          <div style={{ width: '24px', height: '2px', background: 'white', marginBottom: menuOpen ? '0' : '6px', transform: menuOpen ? 'rotate(45deg) translateY(0)' : 'none', transition: '0.3s' }} />
-          <div style={{ width: '24px', height: '2px', background: 'white', marginBottom: '6px', opacity: menuOpen ? 0 : 1, transition: '0.3s' }} />
-          <div style={{ width: '24px', height: '2px', background: 'white', transform: menuOpen ? 'rotate(-45deg) translateY(-2px)' : 'none', transition: '0.3s' }} />
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect 
+              x="3" y="6" width="18" height="2" rx="1" fill="white" 
+              style={{ 
+                transform: menuOpen ? 'rotate(45deg) translate(5px, -4px)' : 'none', 
+                transformOrigin: 'center',
+                transition: '0.3s' 
+              }} 
+            />
+            <rect 
+              x="3" y="11" width="18" height="2" rx="1" fill="white" 
+              style={{ 
+                opacity: menuOpen ? 0 : 1, 
+                transition: '0.2s' 
+              }} 
+            />
+            <rect 
+              x="3" y="16" width="18" height="2" rx="1" fill="white" 
+              style={{ 
+                transform: menuOpen ? 'rotate(-45deg) translate(5px, 4px)' : 'none', 
+                transformOrigin: 'center',
+                transition: '0.3s' 
+              }} 
+            />
+          </svg>
         </button>
 
         {/* Mobile Menu Overlay */}
-        <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`}>
+        <div className={`mobile-overlay ${menuOpen ? 'open' : ''}`} style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: '#0F1A2A',
+          zIndex: 1050,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          opacity: menuOpen ? 1 : 0,
+          visibility: menuOpen ? 'visible' : 'hidden',
+          transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+          transform: menuOpen ? 'translateY(0)' : 'translateY(-20px)'
+        }}>
           <div style={{ 
             width: '100%', 
-            maxWidth: '400px',
+            maxWidth: '320px',
             display: 'flex', 
             flexDirection: 'column', 
-            gap: '20px', 
+            gap: '28px', 
             textAlign: 'center', 
             padding: '40px 24px' 
           }}>
             <div style={{ marginBottom: '20px' }}>
-              <Image src="/tkl-logo.png" alt="Traksal" width={120} height={34} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
+              <Image src="/tkl-logo.png" alt="Traksal" width={140} height={40} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
             </div>
             
-            <a href={`${base}/#caracteristicas`} onClick={closeMenu} style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white' }}>{t.features}</a>
-            <a href={`${base}/#precios`} onClick={closeMenu} style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white' }}>{t.pricing}</a>
-            <a href={`${base}/#contacto`} onClick={closeMenu} style={{ fontSize: '1.2rem', fontWeight: 600, color: 'white' }}>{t.contact}</a>
+            <a href={`${base}/#caracteristicas`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{t.features}</a>
+            <a href={`${base}/#precios`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{t.pricing}</a>
+            <a href={`${base}/#contacto`} onClick={closeMenu} style={{ fontSize: '1.4rem', fontWeight: 700, color: 'white' }}>{t.contact}</a>
             
-            <div style={{ height: '1px', background: 'rgba(255,255,255,0.1)', margin: '10px 0' }} />
+            <div style={{ height: '1px', background: 'rgba(162,217,243,0.15)', margin: '10px 0' }} />
             
-            <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center' }}>
+            <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', fontSize: '1.1rem' }}>
               {t.access}
             </a>
             
-            <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '0.9rem', marginTop: '10px' }}>
+            <Link href={otherLang.href} onClick={closeMenu} style={{ color: 'var(--secondary)', fontWeight: 600, fontSize: '1rem', marginTop: '10px' }}>
               Switch to {otherLang.label}
             </Link>
           </div>
