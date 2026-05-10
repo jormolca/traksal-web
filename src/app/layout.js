@@ -44,7 +44,7 @@ export const metadata = {
     languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' }
   },
   icons: {
-    icon: '/icon.png',
+    icon: '/icon.svg',
     apple: '/apple-icon.png',
   }
 };

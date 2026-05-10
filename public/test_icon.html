@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba de Transparencia de Icono</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .test-container {
+            background-color: #ff0000; /* FONDO ROJO PARA DETECTAR BLANCO */
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        img {
+            width: 128px;
+            height: 128px;
+            display: block;
+        }
+        .label {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test de Transparencia 100%</h1>
+    <div class="test-container">
+        <img src="icon.png" alt="Icono Test">
+    </div>
+    <div class="label">Si ves ROJO en las esquinas, la transparencia es TOTAL.</div>
+</body>
+</html>
