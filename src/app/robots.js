@@ -1,7 +1,10 @@
 export default function robots() {
   return {
-    rules: [{ userAgent: '*', allow: '/', disallow: [] }],
-    sitemap: 'https://www.traksal.com/sitemap.xml',
-    host: 'https://www.traksal.com'
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: '/private/',
+    },
+    sitemap: 'https://traksal.com/sitemap.xml',
   };
 }

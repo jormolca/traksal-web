@@ -103,6 +103,8 @@ export default function FichajeDemo() {
           {steps.map((step, index) => (
             <div
               key={step.id}
+              role="img"
+              aria-label={`Paso ${index + 1} de la demo: ${step.text}`}
               style={{
                 position: 'absolute',
                 top: 0,

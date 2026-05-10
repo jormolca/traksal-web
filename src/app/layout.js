@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://www.traksal.com'),
+  metadataBase: new URL('https://traksal.com'),
   title: {
     default: 'Traksal | Software CRM para Redes Comerciales y Gestión de Equipos',
     template: '%s | Traksal'
@@ -14,9 +14,10 @@ export const metadata = {
     'gestión rutas comerciales', 'CRM pymes', 'software control comerciales',
     'catálogo digital pedidos', 'SaaS fuerza de ventas'
   ],
-  authors: [{ name: 'Traksal', url: 'https://www.traksal.com' }],
+  authors: [{ name: 'Traksal', url: 'https://traksal.com' }],
   creator: 'Traksal',
   publisher: 'Traksal',
+  verification: {},
   robots: {
     index: true,
     follow: true,
@@ -26,7 +27,7 @@ export const metadata = {
     type: 'website',
     locale: 'es_ES',
     alternateLocale: 'en_GB',
-    url: 'https://www.traksal.com',
+    url: 'https://traksal.com',
     siteName: 'Traksal',
     title: 'Traksal | Software CRM para Redes Comerciales',
     description: 'Conecta tu oficina con tu equipo en la calle. Fichaje gratuito, CRM de visitas, catálogo interactivo y nota de gastos para comerciales.',
@@ -39,8 +40,12 @@ export const metadata = {
     images: ['/og-image.png']
   },
   alternates: {
-    canonical: 'https://www.traksal.com',
-    languages: { 'es': 'https://www.traksal.com', 'en': 'https://www.traksal.com/en' }
+    canonical: 'https://traksal.com',
+    languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' }
+  },
+  icons: {
+    icon: '/icon.png',
+    apple: '/apple-icon.png',
   }
 };
 
@@ -58,19 +63,19 @@ const jsonLd = {
     priceCurrency: 'EUR',
     description: 'Módulo de Fichaje completamente gratuito'
   },
-  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://www.traksal.com' }
+  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://traksal.com' }
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <head>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body>{children}</body>
+        {children}
+      </body>
     </html>
   );
 }

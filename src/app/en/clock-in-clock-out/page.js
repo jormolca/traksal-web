@@ -5,25 +5,25 @@ import FichajeDemo from '@/components/FichajeDemo';
 
 
 export const metadata = {
-  title: 'Fichaje Diario Digital en un Clic | Control Horario Traksal',
-  description: 'Descubre cómo el fichaje diario de Traksal simplifica el control horario de tu equipo comercial. Un solo clic desde el móvil, con geolocalización opcional y cumplimiento legal total.',
-  keywords: ['fichaje diario', 'control horario', 'fichaje digital', 'geolocalización empleados', 'ley de control horario', 'traksal'],
+  title: 'One-Click Daily Clock-In & Out | Traksal Attendance Control',
+  description: 'Discover how Traksal simple clock-in simplified time tracking for your sales team. One click from mobile, optional geolocation and full legal compliance.',
+  keywords: ['daily clock-in', 'time tracking', 'attendance control', 'employee geolocation', 'labor law compliance', 'traksal'],
   alternates: {
-    canonical: 'https://traksal.com/fichaje-diario',
-    languages: { 'en': 'https://traksal.com/en/clock-in-clock-out' }
+    canonical: 'https://traksal.com/en/clock-in-clock-out',
+    languages: { 'es': 'https://traksal.com/fichaje-diario' }
   },
   openGraph: {
-    title: 'Fichaje Diario Digital en un Clic | Traksal',
-    description: 'La forma más sencilla y rápida de cumplir con el control horario obligatorio.',
-    url: 'https://traksal.com/fichaje-diario',
+    title: 'One-Click Daily Clock-In & Out | Traksal',
+    description: 'The easiest and fastest way to comply with mandatory time tracking.',
+    url: 'https://traksal.com/en/clock-in-clock-out',
     type: 'website',
   }
 };
 
-export default function FichajeDiarioPage() {
+export default function ClockInPage() {
   return (
     <main style={{ background: 'var(--primary)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Navbar />
+      <Navbar lang="en" />
       
       {/* Schema.org JSON-LD for Software Application Feature */}
       <script
@@ -32,14 +32,14 @@ export default function FichajeDiarioPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Traksal Fichaje Diario",
+            "name": "Traksal Clock-In & Clock-Out",
             "operatingSystem": "iOS, Android, Web",
             "applicationCategory": "BusinessApplication",
             "featureList": [
-              "Fichaje en un clic",
-              "Geolocalización opcional",
-              "Informes legales mensuales",
-              "Sincronización en tiempo real"
+              "One-click clock-in",
+              "Optional geolocation",
+              "Monthly legal reports",
+              "Real-time sync"
             ],
             "offers": {
               "@type": "Offer",
@@ -63,13 +63,13 @@ export default function FichajeDiarioPage() {
             
             {/* Text Side */}
             <div style={{ order: 1 }}>
-              <span className="section-label">Funcionalidad</span>
+              <span className="section-label">Feature</span>
               <h1 style={{ marginBottom: '24px', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)' }}>
-                Fichaje diario <br />
-                <span className="gradient-text">en un solo clic.</span>
+                Daily clock-in <br />
+                <span className="gradient-text">in just one click.</span>
               </h1>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '40px', maxWidth: '500px' }}>
-                Hemos eliminado la complejidad. Tus empleados solo necesitan abrir la app y pulsar un botón. Sin formularios, sin esperas.
+                We have removed complexity. Your employees only need to open the app and tap a button. No forms, no waiting.
               </p>
               
               <div style={{ display: 'grid', gap: '24px' }}>
@@ -78,8 +78,8 @@ export default function FichajeDiarioPage() {
                     ✓
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Con o sin geolocalización</h3>
-                    <p style={{ fontSize: '0.95rem' }}>Tú decides si quieres registrar la ubicación exacta del fichaje o mantenerlo privado. Configurable por el administrador.</p>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>With or without Geolocation</h3>
+                    <p style={{ fontSize: '0.95rem' }}>You decide if you want to record the exact location of the clock-in or keep it private. Fully configurable by the administrator.</p>
                   </div>
                 </div>
                 
@@ -88,15 +88,15 @@ export default function FichajeDiarioPage() {
                     ✓
                   </div>
                   <div>
-                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Disponibilidad inmediata</h3>
-                    <p style={{ fontSize: '0.95rem' }}>El fichaje se sincroniza al instante con el panel de administración para que tengas el control en tiempo real.</p>
+                    <h3 style={{ fontSize: '1.1rem', marginBottom: '4px', color: 'white' }}>Immediate Availability</h3>
+                    <p style={{ fontSize: '0.95rem' }}>The clock-in syncs instantly with the admin panel so you have real-time control of your team.</p>
                   </div>
                 </div>
               </div>
 
               <div style={{ marginTop: '56px' }}>
-                <Link href="/#contacto" className="btn btn-primary btn-lg">
-                  Probar gratis ahora
+                <Link href="/en/#contact" className="btn btn-primary btn-lg">
+                  Try it for free now
                 </Link>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function FichajeDiarioPage() {
         </div>
       </section>
 
-      <Footer />
+      <Footer lang="en" />
     </main>
   );
 }

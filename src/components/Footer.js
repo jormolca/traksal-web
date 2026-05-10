@@ -26,7 +26,7 @@ export default function Footer({ lang = 'es' }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '48px', marginBottom: '48px' }}>
           {/* Brand */}
           <div>
-            <Image src="/tkl-logo.png" alt="Traksal" width={150} height={42} style={{ objectFit: 'contain', mixBlendMode: 'lighten', marginBottom: '16px' }} />
+            <Image src="/logo.svg" alt="Traksal" width={150} height={51} style={{ objectFit: 'contain', marginBottom: '16px' }} />
             <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', maxWidth: '300px', marginTop: '16px' }}>{t.tagline}</p>
             <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '24px', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '10px', fontSize: '0.9rem', fontWeight: 600, transition: 'all 0.2s' }}
@@ -39,9 +39,16 @@ export default function Footer({ lang = 'es' }) {
           {/* Modules */}
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '20px' }}>{t.modules}</h4>
-            {[t.fichaje, t.crm, t.catalog, t.expenses].map(item => (
-              <div key={item} style={{ marginBottom: '12px' }}>
-                <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', transition: 'color 0.2s', cursor: 'default' }}>{item}</span>
+            {[{ label: t.fichaje, href: '/fichaje-diario' }, { label: t.crm }, { label: t.catalog }, { label: t.expenses }].map(item => (
+              <div key={item.label} style={{ marginBottom: '12px' }}>
+                {item.href ? (
+                  <Link href={item.href} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', transition: 'color 0.2s' }}
+                    onMouseOver={e => e.target.style.color = 'white'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
+                    {item.label}
+                  </Link>
+                ) : (
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', cursor: 'default' }}>{item.label}</span>
+                )}
               </div>
             ))}
           </div>
@@ -51,10 +58,14 @@ export default function Footer({ lang = 'es' }) {
             <h4 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '20px' }}>{t.company}</h4>
             {[{ label: t.about }, { label: t.contact, href: '#contacto' }, { label: t.privacy }, { label: t.terms }].map(item => (
               <div key={item.label} style={{ marginBottom: '12px' }}>
-                <a href={item.href || '#'} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', transition: 'color 0.2s' }}
-                  onMouseOver={e => e.target.style.color = 'white'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
-                  {item.label}
-                </a>
+                {item.href ? (
+                  <a href={item.href} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', transition: 'color 0.2s' }}
+                    onMouseOver={e => e.target.style.color = 'white'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>
+                    {item.label}
+                  </a>
+                ) : (
+                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', cursor: 'default' }}>{item.label}</span>
+                )}
               </div>
             ))}
           </div>

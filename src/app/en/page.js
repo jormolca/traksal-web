@@ -1,15 +1,16 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
   title: 'Traksal | CRM Software for Sales Teams – Free Clock-In',
   description: 'Traksal is the CRM software built for field sales teams. Free digital clock-in, visit planning, geographic route optimization, expense reports and interactive catalog.',
-  alternates: { canonical: 'https://www.traksal.com/en', languages: { 'es': 'https://www.traksal.com' } }
+  alternates: { canonical: 'https://traksal.com/en', languages: { 'es': 'https://traksal.com' } }
 };
 
 const features_fichaje = [
-  { icon: '🕐', title: 'Daily Clock-In', desc: 'Employees clock in from their phone in seconds. With or without geolocation.' },
+  { icon: '🕐', title: 'Daily Clock-In', desc: 'Employees clock in from their phone in seconds. With or without geolocation.', link: '/en/clock-in-clock-out' },
   { icon: '📊', title: 'Hours Reports', desc: 'Each employee sees their own worked hours summary in real time.' },
   { icon: '🏖️', title: 'Vacation Requests', desc: 'Full request and approval flow for vacation days, built in.' },
   { icon: '📄', title: 'Legal Monthly Report', desc: 'Generate the monthly report with employee signature. Ready for inspection.' },
@@ -74,11 +75,20 @@ export default function EnglishHomePage() {
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
               {features_fichaje.map(f => (
-                <div key={f.title} className="card">
-                  <div style={{ fontSize: '2rem', marginBottom: '16px' }}>{f.icon}</div>
-                  <h3 style={{ marginBottom: '10px', fontSize: '1.05rem' }}>{f.title}</h3>
-                  <p style={{ fontSize: '0.9rem', margin: 0 }}>{f.desc}</p>
-                </div>
+                f.link ? (
+                  <Link key={f.title} href={f.link} className="card" style={{ cursor: 'pointer', display: 'block' }}>
+                    <div style={{ fontSize: '2rem', marginBottom: '16px' }}>{f.icon}</div>
+                    <h3 style={{ marginBottom: '10px', fontSize: '1.05rem' }}>{f.title}</h3>
+                    <p style={{ fontSize: '0.9rem', margin: 0 }}>{f.desc}</p>
+                    <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'var(--secondary)', fontWeight: 600 }}>Learn more →</div>
+                  </Link>
+                ) : (
+                  <div key={f.title} className="card">
+                    <div style={{ fontSize: '2rem', marginBottom: '16px' }}>{f.icon}</div>
+                    <h3 style={{ marginBottom: '10px', fontSize: '1.05rem' }}>{f.title}</h3>
+                    <p style={{ fontSize: '0.9rem', margin: 0 }}>{f.desc}</p>
+                  </div>
+                )
               ))}
             </div>
             <div style={{ textAlign: 'center', marginTop: '48px' }}>

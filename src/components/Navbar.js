@@ -28,7 +28,7 @@ export default function Navbar({ lang = 'es' }) {
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
         {/* Logo */}
         <Link href={base || '/'} onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', position: 'relative', zIndex: 1001 }}>
-          <Image src="/tkl-logo.png" alt="Traksal" width={140} height={40} style={{ objectFit: 'contain', mixBlendMode: 'lighten' }} priority />
+          <Image src="/logo.svg" alt="Traksal" width={140} height={48} style={{ objectFit: 'contain' }} priority />
         </Link>
 
         {/* Desktop Nav */}
@@ -108,7 +108,7 @@ export default function Navbar({ lang = 'es' }) {
           padding: '20px' 
         }}>
           <div style={{ marginBottom: '20px' }}>
-            <Image src="/tkl-logo.png" alt="Traksal" width={150} height={45} style={{ objectFit: 'contain', mixBlendMode: 'lighten', margin: '0 auto' }} />
+            <Image src="/logo.svg" alt="Traksal" width={150} height={51} style={{ objectFit: 'contain', margin: '0 auto' }} />
           </div>
           
           <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.features}</a>
