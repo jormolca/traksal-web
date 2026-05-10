@@ -1,13 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="rounded-corners">
-      <rect x="0" y="0" width="512" height="512" rx="80" ry="80" />
+    <clipPath id="round-mask">
+      <!-- Este es el recorte matemático exacto de las esquinas -->
+      <rect width="512" height="512" rx="85" ry="85" />
     </clipPath>
   </defs>
-  <!-- Background with perfect rounded corners and 100% transparency outside -->
-  <rect x="0" y="0" width="512" height="512" fill="#0f1a2a" clip-path="url(#rounded-corners)" />
-  <!-- The TKL letters (Modern Sans-Serif style matching the brand) -->
-  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Arial, sans-serif" font-weight="900" font-size="180" fill="#97D4F0">TKL</text>
-  <!-- Subtle lighting effect to match the 'Sales Drive' aesthetic -->
-  <rect x="0" y="0" width="512" height="256" fill="white" opacity="0.05" clip-path="url(#rounded-corners)" />
+  <!-- Aquí cargamos TU archivo original sin ninguna modificación -->
+  <image width="512" height="512" href="icon.png" clip-path="url(#round-mask)" />
 </svg>
