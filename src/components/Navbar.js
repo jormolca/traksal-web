@@ -2,9 +2,25 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+
+// Map each ES slug to its EN counterpart and vice versa
+const ROUTE_MAP = {
+  // ES → EN
+  '/': '/en',
+  '/fichaje-diario': '/en/clock-in-clock-out',
+  '/informe-de-horas': '/en/hours-reports',
+  '/informe-legal-mensual': '/en/monthly-legal-report',
+  // EN → ES
+  '/en': '/',
+  '/en/clock-in-clock-out': '/fichaje-diario',
+  '/en/hours-reports': '/informe-de-horas',
+  '/en/monthly-legal-report': '/informe-legal-mensual',
+};
 
 export default function Navbar({ lang = 'es' }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const t = {
     es: { features: 'Características', pricing: 'Precios', contact: 'Contacto', access: 'Acceder', free: 'Gratis' },
@@ -12,7 +28,8 @@ export default function Navbar({ lang = 'es' }) {
   }[lang];
 
   const base = lang === 'en' ? '/en' : '';
-  const otherLang = lang === 'es' ? { href: '/en', label: 'EN' } : { href: '/', label: 'ES' };
+  const altHref = ROUTE_MAP[pathname] ?? (lang === 'es' ? '/en' : '/');
+  const otherLang = lang === 'es' ? { href: altHref, label: 'EN' } : { href: altHref, label: 'ES' };
 
   const closeMenu = () => setMenuOpen(false);
 
