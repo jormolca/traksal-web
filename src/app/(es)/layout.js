@@ -1,7 +1,7 @@
 import '../globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://traksal.com'),
+  metadataBase: new URL('https://www.traksal.com'),
   title: {
     default: 'Traksal | Software CRM para Redes Comerciales y Gestión de Equipos',
     template: '%s | Traksal'
@@ -14,7 +14,7 @@ export const metadata = {
     'gestión rutas comerciales', 'CRM pymes', 'software control comerciales',
     'catálogo digital pedidos', 'SaaS fuerza de ventas'
   ],
-  authors: [{ name: 'Traksal', url: 'https://traksal.com' }],
+  authors: [{ name: 'Traksal', url: 'https://www.traksal.com' }],
   creator: 'Traksal',
   publisher: 'Traksal',
   verification: {},
@@ -27,7 +27,7 @@ export const metadata = {
     type: 'website',
     locale: 'es_ES',
     alternateLocales: ['en_GB'],
-    url: 'https://traksal.com',
+    url: 'https://www.traksal.com',
     siteName: 'Traksal',
     title: 'Traksal | Software CRM para Redes Comerciales',
     description: 'Conecta tu oficina con tu equipo en la calle. Fichaje gratuito, CRM de visitas, catálogo interactivo y nota de gastos para comerciales.',
@@ -40,8 +40,8 @@ export const metadata = {
     images: ['/og-image.png']
   },
   alternates: {
-    canonical: 'https://traksal.com',
-    languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' }
+    canonical: 'https://www.traksal.com',
+    languages: { 'es': 'https://www.traksal.com', 'en': 'https://www.traksal.com/en' }
   },
   icons: {
     icon: '/icon.svg',

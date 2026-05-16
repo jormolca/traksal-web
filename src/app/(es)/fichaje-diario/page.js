@@ -9,13 +9,13 @@ export const metadata = {
   description: 'Descubre cómo el fichaje diario de Traksal simplifica el control horario de tu equipo comercial. Un solo clic desde el móvil, con geolocalización opcional y cumplimiento legal total.',
   keywords: ['fichaje diario', 'control horario', 'fichaje digital', 'geolocalización empleados', 'ley de control horario', 'traksal'],
   alternates: {
-    canonical: 'https://traksal.com/fichaje-diario',
-    languages: { 'es': 'https://traksal.com/fichaje-diario', 'en': 'https://traksal.com/en/clock-in-clock-out' }
+    canonical: 'https://www.traksal.com/fichaje-diario',
+    languages: { 'es': 'https://www.traksal.com/fichaje-diario', 'en': 'https://www.traksal.com/en/clock-in-clock-out' }
   },
   openGraph: {
     title: 'Fichaje Diario Digital en un Clic | Traksal',
     description: 'La forma más sencilla y rápida de cumplir con el control horario obligatorio.',
-    url: 'https://traksal.com/fichaje-diario',
+    url: 'https://www.traksal.com/fichaje-diario',
     type: 'website',
   }
 };

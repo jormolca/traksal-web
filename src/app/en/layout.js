@@ -1,7 +1,7 @@
 import '../globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://traksal.com'),
+  metadataBase: new URL('https://www.traksal.com'),
   title: {
     default: 'Traksal | CRM Software for Sales Teams',
     template: '%s | Traksal'
@@ -14,7 +14,7 @@ export const metadata = {
     'sales route management', 'SME CRM', 'sales rep control software',
     'digital order catalog', 'sales force SaaS'
   ],
-  authors: [{ name: 'Traksal', url: 'https://traksal.com' }],
+  authors: [{ name: 'Traksal', url: 'https://www.traksal.com' }],
   creator: 'Traksal',
   publisher: 'Traksal',
   verification: {},
@@ -27,7 +27,7 @@ export const metadata = {
     type: 'website',
     locale: 'en_GB',
     alternateLocales: ['es_ES'],
-    url: 'https://traksal.com/en',
+    url: 'https://www.traksal.com/en',
     siteName: 'Traksal',
     title: 'Traksal | CRM Software for Sales Teams',
     description: 'Connect your office with your field team. Free clock-in, visit CRM, interactive catalog and expense reports for sales reps.',
@@ -40,8 +40,8 @@ export const metadata = {
     images: ['/og-image.png']
   },
   alternates: {
-    canonical: 'https://traksal.com/en',
-    languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' }
+    canonical: 'https://www.traksal.com/en',
+    languages: { 'es': 'https://www.traksal.com', 'en': 'https://www.traksal.com/en' }
   },
   icons: {
     icon: '/icon.svg',

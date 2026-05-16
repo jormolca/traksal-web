@@ -6,7 +6,7 @@ import ContactForm from '@/components/ContactForm';
 export const metadata = {
   title: 'Traksal | CRM Software for Sales Teams – Free Clock-In',
   description: 'Traksal is the CRM software built for field sales teams. Free digital clock-in, visit planning, geographic route optimization, expense reports and interactive catalog.',
-  alternates: { canonical: 'https://traksal.com/en', languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' } }
+  alternates: { canonical: 'https://www.traksal.com/en', languages: { 'es': 'https://www.traksal.com', 'en': 'https://www.traksal.com/en' } }
 };
 
 const jsonLd = {
@@ -23,7 +23,7 @@ const jsonLd = {
     priceCurrency: 'EUR',
     description: 'Free clock-in module'
   },
-  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://traksal.com/en' }
+  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://www.traksal.com/en' }
 };
 
 const features_fichaje = [

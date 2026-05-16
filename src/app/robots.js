@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://traksal.com/sitemap.xml',
+    sitemap: 'https://www.traksal.com/sitemap.xml',
   };
 }

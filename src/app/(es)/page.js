@@ -8,7 +8,7 @@ import FichajeDemo from '@/components/FichajeDemo';
 export const metadata = {
   title: 'Traksal | Software CRM para Redes Comerciales – Fichaje Gratuito',
   description: 'Gestiona tu fuerza de ventas con Traksal. Fichaje digital gratuito, CRM de visitas comerciales, planificación de rutas, nota de gastos y catálogo interactivo para pedidos.',
-  alternates: { canonical: 'https://traksal.com', languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' } }
+  alternates: { canonical: 'https://www.traksal.com', languages: { 'es': 'https://www.traksal.com', 'en': 'https://www.traksal.com/en' } }
 };
 
 const jsonLd = {
@@ -25,7 +25,7 @@ const jsonLd = {
     priceCurrency: 'EUR',
     description: 'Módulo de Fichaje completamente gratuito'
   },
-  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://traksal.com' }
+  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://www.traksal.com' }
 };
 
 const features_fichaje = [

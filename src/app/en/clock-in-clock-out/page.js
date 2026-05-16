@@ -9,13 +9,13 @@ export const metadata = {
   description: 'Discover how Traksal simple clock-in simplified time tracking for your sales team. One click from mobile, optional geolocation and full legal compliance.',
   keywords: ['daily clock-in', 'time tracking', 'attendance control', 'employee geolocation', 'labor law compliance', 'traksal'],
   alternates: {
-    canonical: 'https://traksal.com/en/clock-in-clock-out',
-    languages: { 'es': 'https://traksal.com/fichaje-diario', 'en': 'https://traksal.com/en/clock-in-clock-out' }
+    canonical: 'https://www.traksal.com/en/clock-in-clock-out',
+    languages: { 'es': 'https://www.traksal.com/fichaje-diario', 'en': 'https://www.traksal.com/en/clock-in-clock-out' }
   },
   openGraph: {
     title: 'One-Click Daily Clock-In & Out | Traksal',
     description: 'The easiest and fastest way to comply with mandatory time tracking.',
-    url: 'https://traksal.com/en/clock-in-clock-out',
+    url: 'https://www.traksal.com/en/clock-in-clock-out',
     type: 'website',
   }
 };
