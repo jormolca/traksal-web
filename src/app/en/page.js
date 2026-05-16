@@ -28,9 +28,9 @@ const jsonLd = {
 
 const features_fichaje = [
   { icon: '🕐', title: 'Daily Clock-In', desc: 'Employees clock in from their phone in seconds. With or without geolocation.', link: '/en/clock-in-clock-out' },
-  { icon: '📊', title: 'Hours Reports', desc: 'Each employee sees their own worked hours summary in real time.' },
+  { icon: '📊', title: 'Hours Reports', desc: 'Each employee sees their own worked hours summary in real time.', link: '/en/hours-reports' },
   { icon: '🏖️', title: 'Vacation Requests', desc: 'Full request and approval flow for vacation days, built in.' },
-  { icon: '📄', title: 'Legal Monthly Report', desc: 'Generate the monthly report with employee signature. Ready for inspection.' },
+  { icon: '📄', title: 'Legal Monthly Report', desc: 'Generate the monthly report with employee signature. Ready for inspection.', link: '/en/monthly-legal-report' },
   { icon: '📧', title: 'Automatic Alerts', desc: 'Email alert if an employee forgets to clock in at the expected time.' },
   { icon: '✅', title: 'Request Management', desc: 'Centralised panel for managers to approve or reject requests.' },
 ];

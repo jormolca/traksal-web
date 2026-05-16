@@ -30,9 +30,9 @@ const jsonLd = {
 
 const features_fichaje = [
   { icon: '🕐', title: 'Fichaje diario', desc: 'Los empleados fichan desde el móvil con un clic. Con o sin geolocalización.', link: '/fichaje-diario' },
-  { icon: '📊', title: 'Informes de horas', desc: 'Cada empleado ve su propio resumen de horas trabajadas en tiempo real.' },
+  { icon: '📊', title: 'Informes de horas', desc: 'Cada empleado ve su propio resumen de horas trabajadas en tiempo real.', link: '/informe-de-horas' },
   { icon: '🏖️', title: 'Solicitud de vacaciones', desc: 'Flujo completo de petición y aprobación de vacaciones integrado.' },
-  { icon: '📄', title: 'Informe legal mensual', desc: 'Genera el informe mensual con firma del empleado. Listo para inspección.' },
+  { icon: '📄', title: 'Informe legal mensual', desc: 'Genera el informe mensual con firma del empleado. Listo para inspección.', link: '/informe-legal-mensual' },
   { icon: '📧', title: 'Alertas automáticas', desc: 'Aviso por email si el empleado no ficha a la hora prevista.' },
   { icon: '✅', title: 'Gestión de solicitudes', desc: 'Panel centralizado para que el responsable apruebe o deniegue solicitudes.' },
 ];
