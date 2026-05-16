@@ -8,7 +8,24 @@ import FichajeDemo from '@/components/FichajeDemo';
 export const metadata = {
   title: 'Traksal | Software CRM para Redes Comerciales – Fichaje Gratuito',
   description: 'Gestiona tu fuerza de ventas con Traksal. Fichaje digital gratuito, CRM de visitas comerciales, planificación de rutas, nota de gastos y catálogo interactivo para pedidos.',
-  alternates: { canonical: 'https://traksal.com', languages: { 'en': 'https://traksal.com/en' } }
+  alternates: { canonical: 'https://traksal.com', languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' } }
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Traksal',
+  operatingSystem: 'Web, iOS, Android',
+  applicationCategory: 'BusinessApplication',
+  description: 'Software CRM para la gestión de redes comerciales, planificación de visitas, fichaje de empleados y nota de gastos.',
+  url: 'https://www.traksal.com',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+    description: 'Módulo de Fichaje completamente gratuito'
+  },
+  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://traksal.com' }
 };
 
 const features_fichaje = [
@@ -39,6 +56,10 @@ export default function HomePage() {
   return (
     <>
       <Navbar lang="es" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main>
 
         {/* ── HERO ── */}

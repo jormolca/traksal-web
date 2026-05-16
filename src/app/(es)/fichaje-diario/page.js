@@ -10,7 +10,7 @@ export const metadata = {
   keywords: ['fichaje diario', 'control horario', 'fichaje digital', 'geolocalización empleados', 'ley de control horario', 'traksal'],
   alternates: {
     canonical: 'https://traksal.com/fichaje-diario',
-    languages: { 'en': 'https://traksal.com/en/clock-in-clock-out' }
+    languages: { 'es': 'https://traksal.com/fichaje-diario', 'en': 'https://traksal.com/en/clock-in-clock-out' }
   },
   openGraph: {
     title: 'Fichaje Diario Digital en un Clic | Traksal',

@@ -1,4 +1,4 @@
-import './globals.css';
+import '../globals.css';
 
 export const metadata = {
   metadataBase: new URL('https://traksal.com'),
@@ -26,7 +26,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    alternateLocale: 'en_GB',
+    alternateLocales: ['en_GB'],
     url: 'https://traksal.com',
     siteName: 'Traksal',
     title: 'Traksal | Software CRM para Redes Comerciales',
@@ -49,31 +49,10 @@ export const metadata = {
   }
 };
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Traksal',
-  operatingSystem: 'Web, iOS, Android',
-  applicationCategory: 'BusinessApplication',
-  description: 'Software CRM para la gestión de redes comerciales, planificación de visitas, fichaje de empleados y nota de gastos.',
-  url: 'https://www.traksal.com',
-  offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'EUR',
-    description: 'Módulo de Fichaje completamente gratuito'
-  },
-  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://traksal.com' }
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
         {children}
       </body>
     </html>

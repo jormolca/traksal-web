@@ -10,7 +10,7 @@ export const metadata = {
   keywords: ['daily clock-in', 'time tracking', 'attendance control', 'employee geolocation', 'labor law compliance', 'traksal'],
   alternates: {
     canonical: 'https://traksal.com/en/clock-in-clock-out',
-    languages: { 'es': 'https://traksal.com/fichaje-diario' }
+    languages: { 'es': 'https://traksal.com/fichaje-diario', 'en': 'https://traksal.com/en/clock-in-clock-out' }
   },
   openGraph: {
     title: 'One-Click Daily Clock-In & Out | Traksal',

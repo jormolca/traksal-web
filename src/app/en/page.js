@@ -6,7 +6,24 @@ import ContactForm from '@/components/ContactForm';
 export const metadata = {
   title: 'Traksal | CRM Software for Sales Teams – Free Clock-In',
   description: 'Traksal is the CRM software built for field sales teams. Free digital clock-in, visit planning, geographic route optimization, expense reports and interactive catalog.',
-  alternates: { canonical: 'https://traksal.com/en', languages: { 'es': 'https://traksal.com' } }
+  alternates: { canonical: 'https://traksal.com/en', languages: { 'es': 'https://traksal.com', 'en': 'https://traksal.com/en' } }
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Traksal',
+  operatingSystem: 'Web, iOS, Android',
+  applicationCategory: 'BusinessApplication',
+  description: 'CRM software for field sales teams, visit planning, employee clock-in and expense reports.',
+  url: 'https://www.traksal.com/en',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+    description: 'Free clock-in module'
+  },
+  creator: { '@type': 'Organization', name: 'Traksal', url: 'https://traksal.com/en' }
 };
 
 const features_fichaje = [
@@ -31,6 +48,10 @@ export default function EnglishHomePage() {
   return (
     <>
       <Navbar lang="en" />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <main>
 
         {/* ── HERO ── */}
