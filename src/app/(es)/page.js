@@ -31,16 +31,16 @@ const jsonLd = {
 const features_fichaje = [
   { icon: '🕐', title: 'Fichaje diario', desc: 'Los empleados fichan desde el móvil con un clic. Con o sin geolocalización.', link: '/fichaje-diario' },
   { icon: '📊', title: 'Informes de horas', desc: 'Cada empleado ve su propio resumen de horas trabajadas en tiempo real.', link: '/informe-de-horas' },
-  { icon: '🏖️', title: 'Solicitud de vacaciones', desc: 'Flujo completo de petición y aprobación de vacaciones integrado.' },
+  { icon: '🏖️', title: 'Solicitud de vacaciones', desc: 'Flujo completo de petición y aprobación de vacaciones integrado.', link: '/solicitud-vacaciones' },
   { icon: '📄', title: 'Informe legal mensual', desc: 'Genera el informe mensual con firma del empleado. Listo para inspección.', link: '/informe-legal-mensual' },
-  { icon: '📧', title: 'Alertas automáticas', desc: 'Aviso por email si el empleado no ficha a la hora prevista.' },
-  { icon: '✅', title: 'Gestión de solicitudes', desc: 'Panel centralizado para que el responsable apruebe o deniegue solicitudes.' },
+  { icon: '📧', title: 'Alertas automáticas', desc: 'Aviso por email si el empleado no ficha a la hora prevista.', link: '/alertas-automaticas' },
+  { icon: '✅', title: 'Gestión de solicitudes', desc: 'Panel centralizado para que el responsable apruebe o deniegue solicitudes.', link: '/gestion-de-solicitudes' },
 ];
 
 const features_crm = [
-  { icon: '🗺️', title: 'Planificación geográfica', desc: 'Organiza las visitas por orden de ruta para optimizar el tiempo en carretera.' },
-  { icon: '👥', title: 'Asignación de clientes', desc: 'Asigna carteras de clientes a cada comercial con un clic o importación masiva.' },
-  { icon: '📋', title: 'Ficha de visita (GPV)', desc: 'El comercial registra cada visita: estado del lineal, incidencias y resultados.' },
+  { icon: '🗺️', title: 'Planificación geográfica', desc: 'Organiza las visitas por orden de ruta para optimizar el tiempo en carretera.', link: '/planificacion-geografica' },
+  { icon: '👥', title: 'Asignación de clientes', desc: 'Asigna carteras de clientes a cada comercial con un clic o importación masiva.', link: '/asignacion-de-clientes' },
+  { icon: '📋', title: 'Ficha de visita (GPV)', desc: 'El comercial registra cada visita: estado del lineal, incidencias y resultados.', link: '/ficha-de-visita' },
   { icon: '📅', title: 'Programación de visitas', desc: 'Planifica las visitas de toda la semana y consulta el estado en tiempo real.' },
   { icon: '💰', title: 'Nota de gastos', desc: 'Los comerciales registran sus gastos de desplazamiento y dietas desde el móvil.' },
   { icon: '📈', title: 'KPIs del equipo', desc: 'Tasas de visita, cobertura de clientes y rendimiento por comercial.' },
@@ -162,25 +162,35 @@ export default function HomePage() {
         {/* ── CRM ── */}
         <section className="section" style={{ background: 'linear-gradient(180deg, var(--primary) 0%, rgba(22,37,57,0.5) 50%, var(--primary) 100%)' }}>
           <div className="container">
-          <span className="section-label">Próximamente</span>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', alignItems: 'center' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
                 <h2 style={{ margin: 0 }}>CRM para <span className="text-secondary">fuerza de ventas</span></h2>
-                <span className="tag tag-blue">En desarrollo</span>
               </div>
               <p style={{ marginBottom: '32px', fontSize: '1.05rem' }}>
                 Conecta a tu equipo comercial con sus clientes. Planifica rutas, registra visitas y mide el rendimiento de cada comercial desde un solo panel.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {features_crm.map(f => (
-                  <div key={f.title} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                    <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
-                    <div>
-                      <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem' }}>{f.title}</div>
-                      <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
+                  f.link ? (
+                    <Link key={f.title} href={f.link} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', textDecoration: 'none', padding: '8px', borderRadius: '8px', transition: 'background 0.2s', margin: '-8px' }} className="hover-bg-subtle">
+                      <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
+                      <div>
+                        <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          {f.title} <span style={{ fontSize: '0.8rem', color: 'var(--secondary)' }}>→</span>
+                        </div>
+                        <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div key={f.title} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                      <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
+                      <div>
+                        <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem' }}>{f.title}</div>
+                        <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
+                      </div>
                     </div>
-                  </div>
+                  )
                 ))}
               </div>
             </div>

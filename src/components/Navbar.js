@@ -11,11 +11,23 @@ const ROUTE_MAP = {
   '/fichaje-diario': '/en/clock-in-clock-out',
   '/informe-de-horas': '/en/hours-reports',
   '/informe-legal-mensual': '/en/monthly-legal-report',
+  '/solicitud-vacaciones': '/en/vacation-requests',
+  '/gestion-de-solicitudes': '/en/request-management',
+  '/alertas-automaticas': '/en/automatic-alerts',
+  '/planificacion-geografica': '/en/geographic-planning',
+  '/asignacion-de-clientes': '/en/client-assignment',
+  '/ficha-de-visita': '/en/visit-report',
   // EN → ES
   '/en': '/',
   '/en/clock-in-clock-out': '/fichaje-diario',
   '/en/hours-reports': '/informe-de-horas',
   '/en/monthly-legal-report': '/informe-legal-mensual',
+  '/en/vacation-requests': '/solicitud-vacaciones',
+  '/en/request-management': '/gestion-de-solicitudes',
+  '/en/automatic-alerts': '/alertas-automaticas',
+  '/en/geographic-planning': '/planificacion-geografica',
+  '/en/client-assignment': '/asignacion-de-clientes',
+  '/en/visit-report': '/ficha-de-visita',
 };
 
 export default function Navbar({ lang = 'es' }) {

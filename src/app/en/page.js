@@ -29,16 +29,16 @@ const jsonLd = {
 const features_fichaje = [
   { icon: '🕐', title: 'Daily Clock-In', desc: 'Employees clock in from their phone in seconds. With or without geolocation.', link: '/en/clock-in-clock-out' },
   { icon: '📊', title: 'Hours Reports', desc: 'Each employee sees their own worked hours summary in real time.', link: '/en/hours-reports' },
-  { icon: '🏖️', title: 'Vacation Requests', desc: 'Full request and approval flow for vacation days, built in.' },
+  { icon: '🏖️', title: 'Vacation Requests', desc: 'Full request and approval flow for vacation days, built in.', link: '/en/vacation-requests' },
   { icon: '📄', title: 'Legal Monthly Report', desc: 'Generate the monthly report with employee signature. Ready for inspection.', link: '/en/monthly-legal-report' },
-  { icon: '📧', title: 'Automatic Alerts', desc: 'Email alert if an employee forgets to clock in at the expected time.' },
-  { icon: '✅', title: 'Request Management', desc: 'Centralised panel for managers to approve or reject requests.' },
+  { icon: '📧', title: 'Automatic Alerts', desc: 'Email alert if an employee forgets to clock in at the expected time.', link: '/en/automatic-alerts' },
+  { icon: '✅', title: 'Request Management', desc: 'Centralised panel for managers to approve or reject requests.', link: '/en/request-management' },
 ];
 
 const features_crm = [
-  { icon: '🗺️', title: 'Geographic Planning', desc: 'Organise visits by route order to optimise time on the road.' },
-  { icon: '👥', title: 'Client Assignment', desc: 'Assign client portfolios to each rep with one click or bulk import.' },
-  { icon: '📋', title: 'Visit Report (GPV)', desc: 'The rep logs each visit: shelf status, incidents and results.' },
+  { icon: '🗺️', title: 'Geographic Planning', desc: 'Organise visits by route order to optimise time on the road.', link: '/en/geographic-planning' },
+  { icon: '👥', title: 'Client Assignment', desc: 'Assign client portfolios to each rep with one click or bulk import.', link: '/en/client-assignment' },
+  { icon: '📋', title: 'Visit Report (GPV)', desc: 'The rep logs each visit: shelf status, incidents and results.', link: '/en/visit-report' },
   { icon: '📅', title: 'Visit Scheduling', desc: 'Plan the whole week\'s visits and check status in real time.' },
   { icon: '💰', title: 'Expense Reports', desc: 'Reps log travel expenses and allowances from their phone.' },
   { icon: '📈', title: 'Team KPIs', desc: 'Visit rates, client coverage and individual rep performance.' },
@@ -123,21 +123,31 @@ export default function EnglishHomePage() {
           <div className="container">
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
               <div>
-                <span className="section-label" style={{ color: 'var(--secondary)' }}>Coming soon</span>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
                   <h2 style={{ margin: 0 }}>CRM for <span className="text-secondary">field sales</span></h2>
-                  <span className="tag tag-blue">In development</span>
                 </div>
                 <p style={{ marginBottom: '32px', fontSize: '1.05rem' }}>Connect your sales reps with their clients. Plan routes, log visits and measure performance from a single dashboard.</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                   {features_crm.map(f => (
-                    <div key={f.title} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
-                      <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
-                      <div>
-                        <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem' }}>{f.title}</div>
-                        <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
+                    f.link ? (
+                      <Link key={f.title} href={f.link} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start', textDecoration: 'none', padding: '8px', borderRadius: '8px', transition: 'background 0.2s', margin: '-8px' }} className="hover-bg-subtle">
+                        <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
+                        <div>
+                          <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                            {f.title} <span style={{ fontSize: '0.8rem', color: 'var(--secondary)' }}>→</span>
+                          </div>
+                          <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
+                        </div>
+                      </Link>
+                    ) : (
+                      <div key={f.title} style={{ display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                        <span style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>{f.icon}</span>
+                        <div>
+                          <div style={{ fontWeight: 700, color: 'white', marginBottom: '4px', fontSize: '0.95rem' }}>{f.title}</div>
+                          <div style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>{f.desc}</div>
+                        </div>
                       </div>
-                    </div>
+                    )
                   ))}
                 </div>
               </div>

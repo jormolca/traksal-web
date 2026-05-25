@@ -35,7 +35,7 @@ export default function HoursReportsPage() {
         flexDirection: 'column'
       }}>
         <div className="container">
-          <div className="responsive-grid">
+          <div className="responsive-grid" style={{ position: 'relative' }}>
             
             {/* Text Side */}
             <div style={{ order: 1 }}>
@@ -78,8 +78,8 @@ export default function HoursReportsPage() {
             </div>
 
             {/* Visual Side */}
-            <div style={{ order: 2 }}>
-              <InformesPresentacion />
+            <div style={{ order: 2, display: 'flex', justifyContent: 'center', position: 'sticky', top: '140px', alignSelf: 'start' }}>
+              <InformesPresentacion lang="en" />
             </div>
 
           </div>

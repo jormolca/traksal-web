@@ -59,7 +59,7 @@ export default function FichajeDiarioPage() {
         flexDirection: 'column'
       }}>
         <div className="container">
-          <div className="responsive-grid">
+          <div className="responsive-grid" style={{ position: 'relative' }}>
             
             {/* Text Side */}
             <div style={{ order: 1 }}>
@@ -102,8 +102,8 @@ export default function FichajeDiarioPage() {
             </div>
 
             {/* Visual Side */}
-            <div style={{ order: 2 }}>
-              <FichajeDemo />
+            <div style={{ order: 2, display: 'flex', justifyContent: 'center', position: 'sticky', top: '140px', alignSelf: 'start' }}>
+              <FichajeDemo lang="es" />
             </div>
 
           </div>
