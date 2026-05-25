@@ -89,10 +89,10 @@ export default function EnglishHomePage() {
         {/* ── FICHAJE ── */}
         <section id="features" className="section">
           <div className="container">
-            <div style={{ maxWidth: '640px', marginBottom: '64px' }}>
-              <span className="section-label">Free module</span>
+            <div style={{ maxWidth: '640px', marginBottom: '96px', margin: '0 auto', textAlign: 'center' }}>
+              <span className="section-label" style={{ justifyContent: 'center' }}>Free module</span>
               <h2 style={{ marginBottom: '20px' }}>Digital clock-in, <span className="text-accent">free forever</span></h2>
-              <p>No user limits, no expiry. Your team clocks in from their phone in seconds and you have full control from the office.</p>
+              <p style={{ fontSize: '1.15rem' }}>No user limits, no expiry. Your team clocks in from their phone in seconds and you have full control from the office.</p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
               {features_fichaje.map(f => (
