@@ -65,6 +65,7 @@ export default function Navbar({ lang = 'es' }) {
           <a href={`${base}/#caracteristicas`} className="nav-link">{t.features}</a>
           <a href={`${base}/#precios`} className="nav-link">{t.pricing}</a>
           <a href={`${base}/#contacto`} className="nav-link">{t.contact}</a>
+          <Link href="/blog" className="nav-link">Blog</Link>
         </div>
 
         {/* Right Actions (Desktop) */}
@@ -143,6 +144,7 @@ export default function Navbar({ lang = 'es' }) {
           <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.features}</a>
           <a href={`${base}/#precios`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.pricing}</a>
           <a href={`${base}/#contacto`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.contact}</a>
+          <Link href="/blog" onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>Blog</Link>
           
           <div style={{ height: '1px', background: 'rgba(162,217,243,0.1)', margin: '10px 0' }} />
           

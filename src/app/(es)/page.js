@@ -128,7 +128,7 @@ export default function HomePage() {
         {/* ── FICHAJE FREE ── */}
         <section id="caracteristicas" className="section">
           <div className="container">
-            <div style={{ maxWidth: '640px', marginBottom: '96px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ maxWidth: '640px', margin: '0 auto 48px', textAlign: 'center' }}>
               <span className="section-label">Módulo gratuito</span>
               <h2 style={{ marginBottom: '20px' }}>Fichaje digital <span className="text-accent">100% gratuito</span>, para siempre</h2>
               <p style={{ fontSize: '1.15rem' }}>Sin límites de usuarios, sin caducidad. Tu equipo ficha desde el móvil en segundos y tú tienes el control total desde la oficina.</p>

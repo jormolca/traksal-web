@@ -89,7 +89,7 @@ export default function EnglishHomePage() {
         {/* ── FICHAJE ── */}
         <section id="features" className="section">
           <div className="container">
-            <div style={{ maxWidth: '640px', marginBottom: '96px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ maxWidth: '640px', margin: '0 auto 48px', textAlign: 'center' }}>
               <span className="section-label" style={{ justifyContent: 'center' }}>Free module</span>
               <h2 style={{ marginBottom: '20px' }}>Digital clock-in, <span className="text-accent">free forever</span></h2>
               <p style={{ fontSize: '1.15rem' }}>No user limits, no expiry. Your team clocks in from their phone in seconds and you have full control from the office.</p>
