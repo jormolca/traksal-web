@@ -2,6 +2,12 @@ export default function sitemap() {
   return [
     { url: 'https://www.traksal.com', lastModified: new Date(), changeFrequency: 'weekly', priority: 1.0 },
     { url: 'https://www.traksal.com/en', lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
+    { url: 'https://www.traksal.com/catalogo-interactivo-para-comerciales', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: 'https://www.traksal.com/en/interactive-catalog', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: 'https://www.traksal.com/gestion-de-productos', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: 'https://www.traksal.com/en/product-management', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: 'https://www.traksal.com/confirmacion-de-pedidos', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: 'https://www.traksal.com/en/order-confirmation', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: 'https://www.traksal.com/fichaje-diario', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: 'https://www.traksal.com/en/clock-in-clock-out', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: 'https://www.traksal.com/informe-de-horas', lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },

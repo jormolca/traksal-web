@@ -28,7 +28,7 @@ export default function Footer({ lang = 'es' }) {
           <div>
             <Image src="/logo.svg" alt="Traksal" width={150} height={51} style={{ objectFit: 'contain', marginBottom: '16px' }} />
             <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', maxWidth: '300px', marginTop: '16px' }}>{t.tagline}</p>
-            <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer"
+            <a href="https://app.traksal.com" target="_blank" rel="nofollow noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', marginTop: '24px', padding: '12px 24px', background: 'var(--accent)', color: 'white', borderRadius: '10px', fontSize: '0.9rem', fontWeight: 600, transition: 'all 0.2s' }}
               onMouseOver={e => e.currentTarget.style.background = 'var(--accent-dark)'}
               onMouseOut={e => e.currentTarget.style.background = 'var(--accent)'}>
@@ -39,7 +39,12 @@ export default function Footer({ lang = 'es' }) {
           {/* Modules */}
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '20px' }}>{t.modules}</h4>
-            {[{ label: t.fichaje, href: '/fichaje-diario' }, { label: t.crm }, { label: t.catalog }, { label: t.expenses }].map(item => (
+            {[
+              { label: t.fichaje, href: lang === 'en' ? '/en/clock-in-clock-out' : '/fichaje-diario' }, 
+              { label: t.crm, href: lang === 'en' ? '/en' : '/' }, 
+              { label: t.catalog, href: lang === 'en' ? '/en/interactive-catalog' : '/catalogo-interactivo-para-comerciales' }, 
+              { label: t.expenses, href: lang === 'en' ? '/en/expense-reports' : '/nota-de-gastos-comerciales' }
+            ].map(item => (
               <div key={item.label} style={{ marginBottom: '12px' }}>
                 {item.href ? (
                   <Link href={item.href} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', transition: 'color 0.2s' }}
@@ -56,7 +61,12 @@ export default function Footer({ lang = 'es' }) {
           {/* Company */}
           <div>
             <h4 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-muted)', marginBottom: '20px' }}>{t.company}</h4>
-            {[{ label: t.about }, { label: t.contact, href: '#contacto' }, { label: t.privacy }, { label: t.terms }].map(item => (
+            {[
+              { label: t.about, href: lang === 'en' ? '/en/about-us' : '/sobre-traksal' }, 
+              { label: t.contact, href: lang === 'en' ? '/en#contact' : '/#contacto' }, 
+              { label: t.privacy, href: lang === 'en' ? '/en/privacy-policy' : '/politica-de-privacidad' }, 
+              { label: t.terms, href: lang === 'en' ? '/en/terms-of-use' : '/terminos-de-uso' }
+            ].map(item => (
               <div key={item.label} style={{ marginBottom: '12px' }}>
                 {item.href ? (
                   <a href={item.href} style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', transition: 'color 0.2s' }}

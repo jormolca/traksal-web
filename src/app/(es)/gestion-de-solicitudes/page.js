@@ -59,9 +59,6 @@ export default function GestionSolicitudesPage() {
             
             {/* Text Side */}
             <div style={{ order: 1 }}>
-              <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.82rem', color: 'var(--text-muted)', textDecoration: 'none', marginBottom: '24px' }}>
-                ← Volver al inicio
-              </Link>
               <span className="section-label">Para Responsables</span>
               <h1 style={{ marginBottom: '24px', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: 1.1 }}>
                 Todo tu equipo, <br />

@@ -104,7 +104,7 @@ export default function FichaVisitaPresentacion({ lang = 'es' }) {
       }} />
 
       {/* iPad Frame (Landscape) */}
-      <div className="animate-float" style={{
+      <div style={{
         position: 'relative', width: '600px', height: '420px', borderRadius: '24px',
         border: '12px solid #111', background: '#0F1A2A',
         boxShadow: '0 40px 80px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.1)', overflow: 'hidden', zIndex: 1,
@@ -134,8 +134,8 @@ export default function FichaVisitaPresentacion({ lang = 'es' }) {
               🛍️
             </div>
             <div>
-              <div style={{ fontWeight: 700, color: 'white', fontSize: '1rem', marginBottom: '2px' }}>BADALONA-002</div>
-              <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>SAP: 45283 &nbsp;&nbsp; Saca: D</div>
+              <div style={{ fontWeight: 700, color: 'white', fontSize: '1rem', marginBottom: '2px' }}>Estanco-002</div>
+              <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>SAP: 40111 &nbsp;&nbsp; Saca: D</div>
             </div>
             <div style={{ marginLeft: 'auto', color: 'var(--text-muted)' }}>▼</div>
           </div>

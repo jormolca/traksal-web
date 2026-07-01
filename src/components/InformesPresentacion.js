@@ -57,7 +57,7 @@ export default function InformesPresentacion({ lang = 'es' }) {
         pointerEvents: 'none'
       }} />
 
-      <div className="phone-frame animate-float" style={{
+      <div className="phone-frame" style={{
         position: 'relative',
         width: '280px',
         height: '580px',

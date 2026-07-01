@@ -26,6 +26,46 @@ const jsonLd = {
   creator: { '@type': 'Organization', name: 'Traksal', url: 'https://www.traksal.com/en' }
 };
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is the clock-in module really free?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, Traksal\'s clock-in module is 100% free forever, for up to 10 users. It requires no credit card and no previous installation.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'How does the interactive catalog for sales reps work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The interactive catalog allows your sales reps to showcase products, check stock in real time, and log orders directly from a tablet or mobile device during the client visit.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Does Traksal require installation on our own servers?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No, Traksal is a cloud-based software (SaaS). Your team can access it from any web browser or mobile device without needing to install anything on local servers.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Is Traksal a closed application or can it be customized for my company?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Although Traksal is a ready-to-use software, we have our own development team that can build a custom suit, integrating specific features or connecting it with your current ERP.'
+      }
+    }
+  ]
+};
+
+
 const features_fichaje = [
   { icon: '🕐', title: 'Daily Clock-In', desc: 'Employees clock in from their phone in seconds. With or without geolocation.', link: '/en/clock-in-clock-out' },
   { icon: '📊', title: 'Hours Reports', desc: 'Each employee sees their own worked hours summary in real time.', link: '/en/hours-reports' },
@@ -38,10 +78,10 @@ const features_fichaje = [
 const features_crm = [
   { icon: '🗺️', title: 'Geographic Planning', desc: 'Organise visits by route order to optimise time on the road.', link: '/en/geographic-planning' },
   { icon: '👥', title: 'Client Assignment', desc: 'Assign client portfolios to each rep with one click or bulk import.', link: '/en/client-assignment' },
-  { icon: '📋', title: 'Visit Report (GPV)', desc: 'The rep logs each visit: shelf status, incidents and results.', link: '/en/visit-report' },
-  { icon: '📅', title: 'Visit Scheduling', desc: 'Plan the whole week\'s visits and check status in real time.' },
-  { icon: '💰', title: 'Expense Reports', desc: 'Reps log travel expenses and allowances from their phone.' },
-  { icon: '📈', title: 'Team KPIs', desc: 'Visit rates, client coverage and individual rep performance.' },
+  { icon: '🗺️', title: 'Visit Planning', desc: 'Visualize your clients on the map and create the optimal route to save time behind the wheel.', link: '/en/geographic-planning' },
+  { icon: '📅', title: 'Visit Preparation', desc: 'Your daily agenda, objectives, and sales data on your mobile just before crossing the door.', link: '/en/commercial-visits-programming' },
+  { icon: '💰', title: 'AI Expense Reports', desc: 'Upload a picture of the receipt and Artificial Intelligence will fill in the expense automatically.', link: '/en/expense-reports' },
+  { icon: '📈', title: 'AI KPIs & Evaluation', desc: 'Real-time metrics, incentives calculation and automatic evaluations.', link: '/en/sales-team-kpis-evaluation' },
 ];
 
 export default function EnglishHomePage() {
@@ -51,6 +91,10 @@ export default function EnglishHomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main>
 
@@ -92,7 +136,7 @@ export default function EnglishHomePage() {
             <div style={{ maxWidth: '640px', margin: '0 auto 48px', textAlign: 'center' }}>
               <span className="section-label" style={{ justifyContent: 'center' }}>Free module</span>
               <h2 style={{ marginBottom: '20px' }}>Digital clock-in, <span className="text-accent">free forever</span></h2>
-              <p style={{ fontSize: '1.15rem' }}>No user limits, no expiry. Your team clocks in from their phone in seconds and you have full control from the office.</p>
+              <p style={{ fontSize: '1.15rem' }}>Free up to 10 users, no expiry. Your team clocks in from their phone in seconds and you have full control from the office.</p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
               {features_fichaje.map(f => (
@@ -183,7 +227,7 @@ export default function EnglishHomePage() {
                 <span className="tag tag-green" style={{ marginBottom: '20px' }}>✓ Free forever</span>
                 <h3 style={{ fontSize: '1.6rem', marginBottom: '8px' }}>Clock-In</h3>
                 <div style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'var(--font-head)', color: 'var(--secondary)', margin: '16px 0' }}>€0</div>
-                <p style={{ marginBottom: '24px', fontSize: '0.9rem' }}>Unlimited users, no time limit.</p>
+                <p style={{ marginBottom: '24px', fontSize: '0.9rem' }}>Up to 10 users, no time limit.</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '28px' }}>
                   {['Daily clock-in with geolocation','Worked hours calculation','Vacation request & approval','Legal monthly reports with signature','Automatic email alerts'].map(f => (
                     <div key={f} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
@@ -194,9 +238,8 @@ export default function EnglishHomePage() {
                 <a href="#contact" className="btn btn-secondary" style={{ width: '100%', justifyContent: 'center' }}>Start free →</a>
               </div>
               <div className="card" style={{ textAlign: 'left', border: '2px solid var(--accent)', background: 'linear-gradient(135deg, var(--primary-mid) 0%, rgba(194,158,94,0.06) 100%)' }}>
-                <span className="tag tag-accent" style={{ marginBottom: '20px' }}>⭐ Coming soon</span>
                 <h3 style={{ fontSize: '1.6rem', marginBottom: '8px' }}>Sales CRM</h3>
-                <div style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'var(--font-head)', color: 'var(--accent)', margin: '16px 0' }}>TBA<span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>/mo</span></div>
+                <div style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'var(--font-head)', color: 'var(--accent)', margin: '16px 0' }}><span style={{ fontSize: '1.4rem', fontWeight: 500, marginRight: '6px', verticalAlign: 'middle' }}>From</span>€49<span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>/mo</span></div>
                 <p style={{ marginBottom: '24px', fontSize: '0.9rem' }}>Special price for early adopters.</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '28px' }}>
                   {['Everything in free plan','Client management (CRM)','Route-based visit planning','GPV visit log','Sales rep expense reports','Interactive catalog + orders'].map(f => (
@@ -205,11 +248,40 @@ export default function EnglishHomePage() {
                     </div>
                   ))}
                 </div>
-                <a href="#contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Get early access →</a>
+                <a href="#contact" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>Start now →</a>
               </div>
             </div>
           </div>
         </section>
+
+        {/* ── FAQ ── */}
+        <section className="section">
+          <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <span className="section-label" style={{ justifyContent: 'center' }}>Resolved doubts</span>
+              <h2>Frequently Asked Questions</h2>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>Is the clock-in module really free?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>Yes, Traksal&apos;s clock-in module is 100% free forever, for up to 10 users. It requires no credit card and no previous installation.</p>
+              </details>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>How does the interactive catalog for sales reps work?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>The interactive catalog allows your sales reps to showcase products, check stock in real time, and log orders directly from a tablet or mobile device during the client visit.</p>
+              </details>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>Does Traksal require installation on our own servers?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>No, Traksal is a cloud-based software (SaaS). Your team can access it from any web browser or mobile device without needing to install anything on local servers.</p>
+              </details>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>Is Traksal a closed application or can it be customized for my company?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>Although Traksal is a ready-to-use software, we have our own development team that can build a custom suit, integrating specific features or connecting it with your current ERP.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
 
         {/* ── CONTACT ── */}
         <section id="contact" className="section">

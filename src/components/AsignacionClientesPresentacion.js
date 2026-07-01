@@ -75,7 +75,7 @@ export default function AsignacionClientesPresentacion({ lang = 'es' }) {
       }} />
 
       {/* Mac/Browser Frame */}
-      <div className="animate-float" style={{
+      <div style={{
         position: 'relative', width: '480px', height: '340px', borderRadius: '12px',
         border: '1px solid rgba(255,255,255,0.1)', background: '#1C2D44',
         boxShadow: '0 30px 60px rgba(0,0,0,0.5)', overflow: 'hidden', zIndex: 1,

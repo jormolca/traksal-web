@@ -28,6 +28,46 @@ const jsonLd = {
   creator: { '@type': 'Organization', name: 'Traksal', url: 'https://www.traksal.com' }
 };
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿El módulo de fichaje es realmente gratis?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Sí, el módulo de fichaje de Traksal es 100% gratuito para siempre, con un límite de hasta 10 usuarios. No requiere tarjeta de crédito ni instalaciones previas.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cómo funciona el catálogo interactivo para comerciales?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'El catálogo interactivo permite a tus comerciales mostrar productos, consultar stock en tiempo real y registrar pedidos directamente desde una tablet o móvil durante la visita al cliente.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Traksal requiere instalación en servidores propios?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No, Traksal es un software en la nube (SaaS). Tu equipo puede acceder desde cualquier navegador web o dispositivo móvil sin necesidad de instalar nada en servidores locales.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: '¿Traksal es una aplicación cerrada o se puede adaptar a mi empresa?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Aunque Traksal es un software listo para usar, contamos con un equipo de desarrollo propio que puede crear un traje a medida, integrando funcionalidades específicas o conectándolo con tu ERP actual.'
+      }
+    }
+  ]
+};
+
+
 const features_fichaje = [
   { icon: '🕐', title: 'Fichaje diario', desc: 'Los empleados fichan desde el móvil con un clic. Con o sin geolocalización.', link: '/fichaje-diario' },
   { icon: '📊', title: 'Informes de horas', desc: 'Cada empleado ve su propio resumen de horas trabajadas en tiempo real.', link: '/informe-de-horas' },
@@ -40,14 +80,14 @@ const features_fichaje = [
 const features_crm = [
   { icon: '🗺️', title: 'Planificación geográfica', desc: 'Organiza las visitas por orden de ruta para optimizar el tiempo en carretera.', link: '/planificacion-geografica' },
   { icon: '👥', title: 'Asignación de clientes', desc: 'Asigna carteras de clientes a cada comercial con un clic o importación masiva.', link: '/asignacion-de-clientes' },
-  { icon: '📋', title: 'Ficha de visita (GPV)', desc: 'El comercial registra cada visita: estado del lineal, incidencias y resultados.', link: '/ficha-de-visita' },
-  { icon: '📅', title: 'Programación de visitas', desc: 'Planifica las visitas de toda la semana y consulta el estado en tiempo real.' },
-  { icon: '💰', title: 'Nota de gastos', desc: 'Los comerciales registran sus gastos de desplazamiento y dietas desde el móvil.' },
-  { icon: '📈', title: 'KPIs del equipo', desc: 'Tasas de visita, cobertura de clientes y rendimiento por comercial.' },
+  { icon: '🗺️', title: 'Planificación de visitas', desc: 'Visualiza tus clientes en el mapa y crea la ruta óptima para no perder tiempo al volante.', link: '/planificacion-geografica' },
+  { icon: '📅', title: 'Preparación de visitas', desc: 'Tu agenda diaria, objetivos y datos de ventas en tu móvil justo antes de cruzar la puerta.', link: '/programacion-visitas-comerciales' },
+  { icon: '💰', title: 'Nota de gastos con IA', desc: 'Sube una foto del ticket y la Inteligencia Artificial rellenará el gasto automáticamente.', link: '/nota-de-gastos-comerciales' },
+  { icon: '📈', title: 'KPIs y Evaluación IA', desc: 'Métricas en tiempo real, cálculo de incentivos y evaluaciones automáticas.', link: '/kpis-y-evaluacion-equipo-comercial' },
 ];
 
 const stats = [
-  { value: '100%', label: 'Fichaje gratuito, siempre', sub: 'Sin límite de usuarios ni tiempo' },
+  { value: '100%', label: 'Fichaje gratuito, siempre', sub: 'Hasta 10 usuarios, sin límite de tiempo' },
   { value: '<2min', label: 'Para empezar', sub: 'Sin instalaciones ni servidores' },
   { value: '1', label: 'Plataforma, todo integrado', sub: 'RRHH + CRM + Catálogo' },
 ];
@@ -59,6 +99,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <main>
 
@@ -131,7 +175,7 @@ export default function HomePage() {
             <div style={{ maxWidth: '640px', margin: '0 auto 48px', textAlign: 'center' }}>
               <span className="section-label">Módulo gratuito</span>
               <h2 style={{ marginBottom: '20px' }}>Fichaje digital <span className="text-accent">100% gratuito</span>, para siempre</h2>
-              <p style={{ fontSize: '1.15rem' }}>Sin límites de usuarios, sin caducidad. Tu equipo ficha desde el móvil en segundos y tú tienes el control total desde la oficina.</p>
+              <p style={{ fontSize: '1.15rem' }}>Gratis hasta 10 usuarios, sin caducidad. Tu equipo ficha desde el móvil en segundos y tú tienes el control total desde la oficina.</p>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
               {features_fichaje.map(f => (
@@ -228,17 +272,21 @@ export default function HomePage() {
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px' }}>
               {[
-                { icon: '📱', title: 'Digital y sin papel', desc: 'El catálogo siempre actualizado en el dispositivo del comercial' },
-                { icon: '🛒', title: 'Pedido en el acto', desc: 'El cliente confirma el pedido en el momento de la visita' },
-                { icon: '🔗', title: 'Integrado con CRM', desc: 'El pedido queda registrado automáticamente en la ficha del cliente' },
-                { icon: '📦', title: 'Gestión de productos', desc: 'Familias, subfamilias, precios y stock en tiempo real' },
+                { icon: '📱', title: 'Digital y sin papel', desc: 'El catálogo siempre actualizado en el dispositivo del comercial', href: '/catalogo-interactivo-para-comerciales' },
+                { icon: '🛒', title: 'Pedido en el acto', desc: 'El cliente confirma el pedido en el momento de la visita', href: '/confirmacion-de-pedidos' },
+                { icon: '📦', title: 'Gestión de productos', desc: 'Familias, subfamilias, precios y stock en tiempo real', href: '/gestion-de-productos' },
               ].map(f => (
-                <div key={f.title} className="card" style={{ textAlign: 'left' }}>
+                <Link href={f.href} key={f.title} className="card" style={{ textAlign: 'left', textDecoration: 'none', color: 'inherit', display: 'block' }}>
                   <div style={{ fontSize: '2rem', marginBottom: '14px' }}>{f.icon}</div>
                   <h3 style={{ fontSize: '1rem', marginBottom: '8px' }}>{f.title}</h3>
                   <p style={{ fontSize: '0.85rem', margin: 0 }}>{f.desc}</p>
-                </div>
+                </Link>
               ))}
+            </div>
+            <div style={{ marginTop: '40px' }}>
+              <Link href="/catalogo-interactivo-para-comerciales" className="btn btn-primary">
+                Descubrir Catálogo Interactivo →
+              </Link>
             </div>
           </div>
         </section>
@@ -256,7 +304,7 @@ export default function HomePage() {
                 <span className="tag tag-green" style={{ marginBottom: '20px' }}>✓ Gratis para siempre</span>
                 <h3 style={{ fontSize: '1.6rem', marginBottom: '8px' }}>Fichaje</h3>
                 <div style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'var(--font-head)', color: 'var(--secondary)', margin: '16px 0' }}>0€</div>
-                <p style={{ marginBottom: '24px', fontSize: '0.9rem' }}>Usuarios ilimitados, sin límite de tiempo.</p>
+                <p style={{ marginBottom: '24px', fontSize: '0.9rem' }}>Hasta 10 usuarios, sin límite de tiempo.</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '28px' }}>
                   {['Fichaje diario con geolocalización','Cálculo de horas trabajadas','Solicitud y gestión de vacaciones','Informes legales con firma','Alertas por email automáticas'].map(f => (
                     <div key={f} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start', fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
@@ -271,9 +319,8 @@ export default function HomePage() {
 
               {/* CRM */}
               <div className="card" style={{ textAlign: 'left', border: '2px solid var(--accent)', background: 'linear-gradient(135deg, var(--primary-mid) 0%, rgba(194,158,94,0.06) 100%)' }}>
-                <span className="tag tag-accent" style={{ marginBottom: '20px' }}>⭐ Próximamente</span>
                 <h3 style={{ fontSize: '1.6rem', marginBottom: '8px' }}>CRM Comercial</h3>
-                <div style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'var(--font-head)', color: 'var(--accent)', margin: '16px 0' }}>?€<span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>/mes</span></div>
+                <div style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'var(--font-head)', color: 'var(--accent)', margin: '16px 0' }}><span style={{ fontSize: '1.4rem', fontWeight: 500, marginRight: '6px', verticalAlign: 'middle' }}>Desde</span>49€<span style={{ fontSize: '1rem', fontWeight: 400, color: 'var(--text-muted)' }}>/mes</span></div>
                 <p style={{ marginBottom: '24px', fontSize: '0.9rem' }}>Precio especial para los primeros clientes.</p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '28px' }}>
                   {['Todo lo del plan gratuito','Gestión de clientes (CRM)','Planificación de visitas por ruta','Ficha GPV de cada visita','Nota de gastos de comerciales','Catálogo interactivo + pedidos'].map(f => (
@@ -283,12 +330,41 @@ export default function HomePage() {
                   ))}
                 </div>
                 <a href="#contacto" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Quiero ser el primero →
+                  Empezar ahora →
                 </a>
               </div>
             </div>
           </div>
         </section>
+
+        {/* ── FAQ ── */}
+        <section className="section">
+          <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+              <span className="section-label" style={{ justifyContent: 'center' }}>Dudas resueltas</span>
+              <h2>Preguntas Frecuentes</h2>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>¿El módulo de fichaje es realmente gratis?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>Sí, el módulo de fichaje de Traksal es 100% gratuito para siempre, con un límite de hasta 10 usuarios. No requiere tarjeta de crédito ni instalaciones previas.</p>
+              </details>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>¿Cómo funciona el catálogo interactivo para comerciales?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>El catálogo interactivo permite a tus comerciales mostrar productos, consultar stock en tiempo real y registrar pedidos directamente desde una tablet o móvil durante la visita al cliente.</p>
+              </details>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>¿Traksal requiere instalación en servidores propios?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>No, Traksal es un software en la nube (SaaS). Tu equipo puede acceder desde cualquier navegador web o dispositivo móvil sin necesidad de instalar nada en servidores locales.</p>
+              </details>
+              <details className="card faq-details" style={{ padding: '24px', textAlign: 'left', cursor: 'pointer' }}>
+                <summary style={{ fontSize: '1.1rem', fontWeight: 600, outline: 'none' }}>¿Traksal es una aplicación cerrada o se puede adaptar a mi empresa?</summary>
+                <p style={{ color: 'var(--text-secondary)', margin: '16px 0 0 0', fontSize: '0.95rem', lineHeight: 1.6 }}>Aunque Traksal es un software listo para usar, contamos con un equipo de desarrollo propio que puede crear un traje a medida, integrando funcionalidades específicas o conectándolo con tu ERP actual.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
 
         {/* ── CONTACT CTA ── */}
         <section id="contacto" className="section">

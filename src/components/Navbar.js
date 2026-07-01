@@ -44,6 +44,7 @@ export default function Navbar({ lang = 'es' }) {
   const otherLang = lang === 'es' ? { href: altHref, label: 'EN' } : { href: altHref, label: 'ES' };
 
   const closeMenu = () => setMenuOpen(false);
+  const logoAlt = lang === 'es' ? 'Traksal - Software CRM para Comerciales' : 'Traksal - Sales CRM Software';
 
   return (
     <nav style={{
@@ -57,7 +58,7 @@ export default function Navbar({ lang = 'es' }) {
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
         {/* Logo */}
         <Link href={base || '/'} onClick={closeMenu} style={{ display: 'flex', alignItems: 'center', position: 'relative', zIndex: 1001 }}>
-          <Image src="/logo.svg" alt="Traksal" width={140} height={48} style={{ objectFit: 'contain' }} priority />
+          <Image src="/logo.svg" alt={logoAlt} width={140} height={48} style={{ objectFit: 'contain' }} priority />
         </Link>
 
         {/* Desktop Nav */}
@@ -73,7 +74,7 @@ export default function Navbar({ lang = 'es' }) {
           <Link href={otherLang.href} className="lang-selector">
             {otherLang.label}
           </Link>
-          <a href="https://app.traksal.com" target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
+          <a href="https://app.traksal.com" target="_blank" rel="nofollow noopener noreferrer" className="btn btn-primary btn-sm">
             {t.access} →
           </a>
         </div>
@@ -138,7 +139,7 @@ export default function Navbar({ lang = 'es' }) {
           padding: '20px' 
         }}>
           <div style={{ marginBottom: '20px' }}>
-            <Image src="/logo.svg" alt="Traksal" width={150} height={51} style={{ objectFit: 'contain', margin: '0 auto' }} />
+            <Image src="/logo.svg" alt={logoAlt} width={150} height={51} style={{ objectFit: 'contain', margin: '0 auto' }} />
           </div>
           
           <a href={`${base}/#caracteristicas`} onClick={closeMenu} className="mobile-link" style={{ fontSize: '1.5rem', textDecoration: 'none' }}>{t.features}</a>
@@ -148,7 +149,7 @@ export default function Navbar({ lang = 'es' }) {
           
           <div style={{ height: '1px', background: 'rgba(162,217,243,0.1)', margin: '10px 0' }} />
           
-          <a href="https://app.traksal.com" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '16px' }}>
+          <a href="https://app.traksal.com" target="_blank" rel="nofollow noopener noreferrer" onClick={closeMenu} className="btn btn-primary btn-lg" style={{ width: '100%', justifyContent: 'center', fontSize: '1.1rem', padding: '16px' }}>
             {t.access}
           </a>
           
